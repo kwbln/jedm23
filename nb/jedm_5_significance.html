@@ -1,0 +1,2824 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Significance Tests &#8212; A Course Enrollment System based on Success to Support Struggling Students</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'nb/jedm_5_significance';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Recommendations" href="jedm_4_recommendations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    A Course Enrollment System Built on Success to Support Students At-Risk
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="jedm_1_data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jedm_2_neighbors.html">Number of Possible Neighbors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jedm_3_risk.html">Dropout Risk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="jedm_4_recommendations.html">Recommendations</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Significance Tests</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/nb/jedm_5_significance.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Significance Tests</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropout-prediction-data">Dropout Prediction Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendations-data">Recommendations Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#def-test-stat-sign">def test_stat_sign()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropout-pred">Dropout Pred</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normality">Normality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#significance">Significance</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-recommended-courses-r">Number of Recommended Courses #R</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Normality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Significance</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersection">Intersection</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Normality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Significance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-results">Combine Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <div class="tex2jax_ignore mathjax_ignore section" id="significance-tests">
+<h1>Significance Tests<a class="headerlink" href="#significance-tests" title="Permalink to this headline">#</a></h1>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">ast</span> <span class="kn">import</span> <span class="n">literal_eval</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">CURR_PATH</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span>
+<span class="n">SEED</span> <span class="o">=</span> <span class="mi">59</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="n">font_family</span> <span class="o">=</span> <span class="s2">&quot;Calibri&quot;</span>
+
+<span class="n">data_path</span> <span class="o">=</span> <span class="n">CURR_PATH</span><span class="o">.</span><span class="n">parents</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="s1">&#39;data&#39;</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">styles</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;th&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;font-size&quot;</span><span class="p">,</span> <span class="s2">&quot;11pt&quot;</span><span class="p">),</span>
+                               <span class="p">(</span><span class="s2">&quot;text-align&quot;</span><span class="p">,</span> <span class="s2">&quot;center&quot;</span><span class="p">),</span>
+                               <span class="p">(</span><span class="s1">&#39;font-family&#39;</span><span class="p">,</span> <span class="n">font_family</span><span class="p">),</span>
+                               <span class="p">(</span><span class="s1">&#39;background-color&#39;</span><span class="p">,</span> <span class="s1">&#39;white&#39;</span><span class="p">),</span>
+                               <span class="p">(</span><span class="s1">&#39;border-style&#39;</span><span class="p">,</span> <span class="s1">&#39;solid&#39;</span><span class="p">),</span>
+                               <span class="p">(</span><span class="s1">&#39;border-color&#39;</span><span class="p">,</span> <span class="s1">&#39;grey&#39;</span><span class="p">),</span>
+                               <span class="p">(</span><span class="s1">&#39;border-width&#39;</span><span class="p">,</span> <span class="s1">&#39;thin&#39;</span><span class="p">)]),</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;td&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;font-size&quot;</span><span class="p">,</span> <span class="s2">&quot;11pt&quot;</span><span class="p">),</span>
+                               <span class="c1">#(&quot;text-align&quot;, &quot;center&quot;),</span>
+                               <span class="p">(</span><span class="s1">&#39;font-family&#39;</span><span class="p">,</span> <span class="n">font_family</span><span class="p">),</span>
+                               <span class="c1">#(&#39;background-color&#39;, &#39;white&#39;),</span>
+                               <span class="p">(</span><span class="s1">&#39;border-style&#39;</span><span class="p">,</span> <span class="s1">&#39;solid&#39;</span><span class="p">),</span>
+                               <span class="p">(</span><span class="s1">&#39;border-color&#39;</span><span class="p">,</span> <span class="s1">&#39;grey&#39;</span><span class="p">),</span>
+                               <span class="p">(</span><span class="s1">&#39;border-width&#39;</span><span class="p">,</span> <span class="s1">&#39;thin&#39;</span><span class="p">)]),</span>
+    <span class="nb">dict</span><span class="p">(</span><span class="n">selector</span><span class="o">=</span><span class="s2">&quot;caption&quot;</span><span class="p">,</span> <span class="n">props</span><span class="o">=</span><span class="p">[(</span><span class="s2">&quot;caption-side&quot;</span><span class="p">,</span> <span class="s2">&quot;bottom&quot;</span><span class="p">)])</span>
+<span class="p">]</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set_theme</span><span class="p">(</span><span class="n">context</span><span class="o">=</span><span class="s1">&#39;paper&#39;</span><span class="p">,</span>  <span class="c1"># notebook, paper, talk</span>
+              <span class="n">style</span><span class="o">=</span><span class="s1">&#39;ticks&#39;</span><span class="p">,</span> 
+              <span class="n">font</span><span class="o">=</span><span class="n">font_family</span><span class="p">,</span> 
+              <span class="n">font_scale</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+             <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+<div class="section" id="dropout-prediction-data">
+<h2>Dropout Prediction Data<a class="headerlink" href="#dropout-prediction-data" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pred_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_path</span> <span class="o">/</span> <span class="s1">&#39;pred_data.csv&#39;</span> <span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pred_data</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">pred_data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
+<span class="n">pred_data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(3300, 14) [&#39;AN&#39; &#39;AN1&#39; &#39;AN2&#39; &#39;AN3&#39; &#39;AN4&#39; &#39;GN&#39;]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>P</th>
+      <th>S</th>
+      <th>PS</th>
+      <th>ST</th>
+      <th>ST_Num</th>
+      <th>BAL</th>
+      <th>CO</th>
+      <th>DT</th>
+      <th>CLF</th>
+      <th>PR1</th>
+      <th>P1</th>
+      <th>T</th>
+      <th>PR2</th>
+      <th>P2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR</td>
+      <td>2</td>
+      <td>AR2</td>
+      <td>G</td>
+      <td>0</td>
+      <td>S</td>
+      <td>0</td>
+      <td>0.35</td>
+      <td>RF</td>
+      <td>0.22</td>
+      <td>0</td>
+      <td>AN</td>
+      <td>0.32</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR</td>
+      <td>2</td>
+      <td>AR2</td>
+      <td>D</td>
+      <td>1</td>
+      <td>S</td>
+      <td>0</td>
+      <td>0.35</td>
+      <td>RF</td>
+      <td>0.12</td>
+      <td>0</td>
+      <td>AN</td>
+      <td>0.09</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR</td>
+      <td>2</td>
+      <td>AR2</td>
+      <td>G</td>
+      <td>0</td>
+      <td>S</td>
+      <td>0</td>
+      <td>0.35</td>
+      <td>RF</td>
+      <td>0.04</td>
+      <td>0</td>
+      <td>AN</td>
+      <td>0.04</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR</td>
+      <td>2</td>
+      <td>AR2</td>
+      <td>G</td>
+      <td>0</td>
+      <td>S</td>
+      <td>0</td>
+      <td>0.35</td>
+      <td>RF</td>
+      <td>0.06</td>
+      <td>0</td>
+      <td>AN</td>
+      <td>0.06</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR</td>
+      <td>2</td>
+      <td>AR2</td>
+      <td>G</td>
+      <td>0</td>
+      <td>S</td>
+      <td>0</td>
+      <td>0.35</td>
+      <td>RF</td>
+      <td>0.16</td>
+      <td>0</td>
+      <td>AN</td>
+      <td>0.02</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="recommendations-data">
+<h2>Recommendations Data<a class="headerlink" href="#recommendations-data" title="Permalink to this headline">#</a></h2>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">recoms</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">data_path</span> <span class="o">/</span> <span class="s1">&#39;recom_data.csv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+
+<span class="n">set_cols</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Passed_Past&#39;</span><span class="p">,</span> <span class="s1">&#39;Passed_Next&#39;</span><span class="p">,</span> 
+    <span class="s1">&#39;ID_TO&#39;</span><span class="p">,</span> <span class="s1">&#39;D_List&#39;</span><span class="p">,</span> <span class="s1">&#39;Count_Next_TO&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Nbrs_Passed_Next_TO&#39;</span><span class="p">,</span> <span class="s1">&#39;AC&#39;</span><span class="p">,</span> <span class="s1">&#39;No_Recom_Rule&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;W&#39;</span><span class="p">,</span> <span class="s1">&#39;NoR&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NR&#39;</span>
+<span class="p">]</span>
+
+<span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">set_cols</span><span class="p">:</span>
+    <span class="n">recoms</span><span class="p">[</span><span class="n">c</span><span class="p">]</span> <span class="o">=</span> <span class="n">recoms</span><span class="p">[</span><span class="n">c</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;set()&#39;</span><span class="p">,</span>
+                                  <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;None&#39;</span><span class="p">,</span>
+                                                <span class="s1">&#39;</span><span class="si">{}</span><span class="s1">&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">literal_eval</span><span class="p">)</span>
+
+<span class="n">TYPES</span> <span class="o">=</span> <span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">recoms</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">TYPES</span><span class="p">)</span>
+<span class="n">recoms</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(16392, 64) [&#39;AN&#39; &#39;AN1&#39; &#39;AN2&#39; &#39;AN3&#39; &#39;AN4&#39; &#39;GN&#39;]
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>P</th>
+      <th>ID</th>
+      <th>ST</th>
+      <th>#E_1</th>
+      <th>#E_2</th>
+      <th>#E_3</th>
+      <th>#F_1</th>
+      <th>#F_2</th>
+      <th>#F_3</th>
+      <th>#NE_1</th>
+      <th>...</th>
+      <th>ACC</th>
+      <th>REC_1</th>
+      <th>REC_0</th>
+      <th>BACC</th>
+      <th>PREC_1</th>
+      <th>F1</th>
+      <th>MCC</th>
+      <th>NT</th>
+      <th>MPT</th>
+      <th>PS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>8464</th>
+      <td>CM</td>
+      <td>1974</td>
+      <td>G</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1.000000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>1.000000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>AN</td>
+      <td>P4</td>
+      <td>CM2</td>
+    </tr>
+    <tr>
+      <th>7264</th>
+      <td>CM</td>
+      <td>421</td>
+      <td>D</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>7.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1.000000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>1.000000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>AN</td>
+      <td>P4</td>
+      <td>CM2</td>
+    </tr>
+    <tr>
+      <th>9111</th>
+      <td>CM</td>
+      <td>2788</td>
+      <td>D</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.666667</td>
+      <td>0.8</td>
+      <td>0.0</td>
+      <td>0.4</td>
+      <td>0.800000</td>
+      <td>0.8</td>
+      <td>-0.2</td>
+      <td>AN</td>
+      <td>P3</td>
+      <td>CM2</td>
+    </tr>
+    <tr>
+      <th>1898</th>
+      <td>AR</td>
+      <td>1937</td>
+      <td>G</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.666667</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>0.666667</td>
+      <td>0.8</td>
+      <td>0.0</td>
+      <td>AN</td>
+      <td>P2</td>
+      <td>AR2</td>
+    </tr>
+    <tr>
+      <th>1373</th>
+      <td>AR</td>
+      <td>1477</td>
+      <td>G</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>1.000000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>0.5</td>
+      <td>1.000000</td>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>GN</td>
+      <td>P0</td>
+      <td>AR2</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 64 columns</p>
+</div></div></div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_compare</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;GN&#39;</span><span class="p">,</span> <span class="n">val</span><span class="p">)</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="p">[</span><span class="n">t</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">TYPES</span> <span class="k">if</span> <span class="n">t</span> <span class="o">!=</span> <span class="s1">&#39;GN&#39;</span><span class="p">]]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;to compare:&#39;</span><span class="p">,</span> <span class="n">to_compare</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>to compare: [(&#39;GN&#39;, &#39;AN&#39;), (&#39;GN&#39;, &#39;AN1&#39;), (&#39;GN&#39;, &#39;AN2&#39;), (&#39;GN&#39;, &#39;AN3&#39;), (&#39;GN&#39;, &#39;AN4&#39;)]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">#</a></h2>
+<div class="section" id="def-test-stat-sign">
+<h3>def test_stat_sign()<a class="headerlink" href="#def-test-stat-sign" title="Permalink to this headline">#</a></h3>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">test_stat_sign</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">to_test</span><span class="p">):</span>
+
+    <span class="n">p_vals</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">comp</span> <span class="ow">in</span> <span class="n">to_compare</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">ps</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+
+            <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;ST&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+
+                <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">ps</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ST&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">st</span><span class="p">)]</span>
+
+                <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">wilcoxon</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">comp</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="n">to_test</span><span class="p">],</span>
+                                     <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">comp</span><span class="p">[</span><span class="mi">1</span><span class="p">]][</span><span class="n">to_test</span><span class="p">],</span>
+                                     <span class="n">alternative</span><span class="o">=</span><span class="s1">&#39;two-sided&#39;</span><span class="p">,</span>
+                                    <span class="c1">#zero_method=&#39;zsplit&#39;</span>
+                                    <span class="p">)</span>
+                <span class="n">stat</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="n">p_v</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+                <span class="n">p_vals</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">comp</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">ps</span><span class="p">,</span> <span class="n">st</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">p_v</span><span class="p">,</span> <span class="mi">5</span><span class="p">)])</span>
+
+            
+    <span class="n">p_vals</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">p_vals</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;PS&#39;</span><span class="p">,</span> <span class="s1">&#39;ST&#39;</span><span class="p">,</span> <span class="s1">&#39;P_Values&#39;</span><span class="p">])</span>\
+        <span class="o">.</span><span class="n">pivot_table</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="s1">&#39;PS&#39;</span><span class="p">],</span> <span class="n">columns</span><span class="o">=</span><span class="s1">&#39;ST&#39;</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="s1">&#39;P_Values&#39;</span><span class="p">)</span>
+
+    <span class="n">p_vals</span><span class="p">[</span><span class="s1">&#39;Count&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">p_vals</span> <span class="o">&gt;</span> <span class="mf">0.05</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">p_vals</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_product</span><span class="p">([[</span><span class="n">to_test</span><span class="p">],</span> <span class="n">p_vals</span><span class="o">.</span><span class="n">columns</span><span class="p">])</span>
+
+    <span class="k">return</span> <span class="n">p_vals</span>
+</pre></div>
+</div>
+</div>
+</details>
+</div>
+</div>
+<div class="section" id="dropout-pred">
+<h3>Dropout Pred<a class="headerlink" href="#dropout-pred" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_test</span> <span class="o">=</span> <span class="s1">&#39;PR2&#39;</span>
+
+<span class="c1"># just for the plot</span>
+<span class="n">pred_data</span><span class="p">[</span><span class="s1">&#39;PR2_binned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">pred_data</span><span class="p">[</span><span class="s1">&#39;PR2&#39;</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span> 
+<span class="n">pred_data</span><span class="p">[[</span><span class="s1">&#39;PR2&#39;</span><span class="p">,</span><span class="s1">&#39;PR2_binned&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PR2</th>
+      <th>PR2_binned</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>3092</th>
+      <td>0.83000</td>
+      <td>(0.8, 0.9]</td>
+    </tr>
+    <tr>
+      <th>2665</th>
+      <td>0.19357</td>
+      <td>(0.1, 0.2]</td>
+    </tr>
+    <tr>
+      <th>2971</th>
+      <td>0.21000</td>
+      <td>(0.2, 0.3]</td>
+    </tr>
+    <tr>
+      <th>2565</th>
+      <td>0.02000</td>
+      <td>(-0.001, 0.1]</td>
+    </tr>
+    <tr>
+      <th>3152</th>
+      <td>0.02000</td>
+      <td>(-0.001, 0.1]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="normality">
+<h4>Normality<a class="headerlink" href="#normality" title="Permalink to this headline">#</a></h4>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">pred_data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;PR2_binned&#39;</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+            <span class="n">col</span><span class="o">=</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s1">&#39;PS&#39;</span><span class="p">,</span>
+           <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;ST&#39;</span><span class="p">)</span>
+
+<span class="n">loc</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">()</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/f440dae0ae6eb5195f408ef1070911c731c5d1c428127147885123316f1888f6.png" src="../_images/f440dae0ae6eb5195f408ef1070911c731c5d1c428127147885123316f1888f6.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">]:</span>
+    
+    <span class="k">for</span> <span class="n">ps</span> <span class="ow">in</span> <span class="n">pred_data</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">TYPES</span><span class="p">:</span>
+    
+            <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">pred_data</span><span class="p">[(</span><span class="n">pred_data</span><span class="p">[</span><span class="s1">&#39;ST&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">st</span><span class="p">)</span> 
+                                      <span class="o">&amp;</span> <span class="p">(</span><span class="n">pred_data</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">ps</span><span class="p">)</span> 
+                                      <span class="o">&amp;</span> <span class="p">(</span><span class="n">pred_data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">t</span><span class="p">)][</span><span class="n">to_test</span><span class="p">],</span> <span class="s1">&#39;norm&#39;</span><span class="p">)</span> <span class="c1">#p-value near zero rejects normality</span>
+            <span class="n">stat</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">p_v</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="c1">#print(res)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">ps</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1"> &lt;3</span><span class="si">}</span><span class="s1">: statistic: </span><span class="si">{</span><span class="n">stat</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> - p-value </span><span class="si">{</span><span class="n">p_v</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D - AR2 - AN : statistic: 0.504 - p-value 0.000
+D - AR2 - AN1: statistic: 0.504 - p-value 0.000
+D - AR2 - AN2: statistic: 0.504 - p-value 0.000
+D - AR2 - AN3: statistic: 0.504 - p-value 0.000
+D - AR2 - AN4: statistic: 0.504 - p-value 0.000
+D - AR2 - GN : statistic: 0.504 - p-value 0.000
+D - AR3 - AN : statistic: 0.500 - p-value 0.000
+D - AR3 - AN1: statistic: 0.500 - p-value 0.000
+D - AR3 - AN2: statistic: 0.500 - p-value 0.000
+D - AR3 - AN3: statistic: 0.500 - p-value 0.000
+D - AR3 - AN4: statistic: 0.500 - p-value 0.000
+D - AR3 - GN : statistic: 0.500 - p-value 0.000
+D - CM2 - AN : statistic: 0.531 - p-value 0.000
+D - CM2 - AN1: statistic: 0.531 - p-value 0.000
+D - CM2 - AN2: statistic: 0.531 - p-value 0.000
+D - CM2 - AN3: statistic: 0.531 - p-value 0.000
+D - CM2 - AN4: statistic: 0.531 - p-value 0.000
+D - CM2 - GN : statistic: 0.531 - p-value 0.000
+D - CM3 - AN : statistic: 0.555 - p-value 0.000
+D - CM3 - AN1: statistic: 0.525 - p-value 0.000
+D - CM3 - AN2: statistic: 0.517 - p-value 0.000
+D - CM3 - AN3: statistic: 0.510 - p-value 0.000
+D - CM3 - AN4: statistic: 0.505 - p-value 0.000
+D - CM3 - GN : statistic: 0.505 - p-value 0.000
+D - PT2 - AN : statistic: 0.539 - p-value 0.000
+D - PT2 - AN1: statistic: 0.539 - p-value 0.000
+D - PT2 - AN2: statistic: 0.546 - p-value 0.000
+D - PT2 - AN3: statistic: 0.546 - p-value 0.000
+D - PT2 - AN4: statistic: 0.522 - p-value 0.000
+D - PT2 - GN : statistic: 0.546 - p-value 0.000
+D - PT3 - AN : statistic: 0.589 - p-value 0.000
+D - PT3 - AN1: statistic: 0.589 - p-value 0.000
+D - PT3 - AN2: statistic: 0.589 - p-value 0.000
+D - PT3 - AN3: statistic: 0.589 - p-value 0.000
+D - PT3 - AN4: statistic: 0.589 - p-value 0.000
+D - PT3 - GN : statistic: 0.589 - p-value 0.000
+G - AR2 - AN : statistic: 0.500 - p-value 0.000
+G - AR2 - AN1: statistic: 0.500 - p-value 0.000
+G - AR2 - AN2: statistic: 0.500 - p-value 0.000
+G - AR2 - AN3: statistic: 0.500 - p-value 0.000
+G - AR2 - AN4: statistic: 0.500 - p-value 0.000
+G - AR2 - GN : statistic: 0.500 - p-value 0.000
+G - AR3 - AN : statistic: 0.500 - p-value 0.000
+G - AR3 - AN1: statistic: 0.500 - p-value 0.000
+G - AR3 - AN2: statistic: 0.500 - p-value 0.000
+G - AR3 - AN3: statistic: 0.500 - p-value 0.000
+G - AR3 - AN4: statistic: 0.500 - p-value 0.000
+G - AR3 - GN : statistic: 0.500 - p-value 0.000
+G - CM2 - AN : statistic: 0.531 - p-value 0.000
+G - CM2 - AN1: statistic: 0.531 - p-value 0.000
+G - CM2 - AN2: statistic: 0.531 - p-value 0.000
+G - CM2 - AN3: statistic: 0.531 - p-value 0.000
+G - CM2 - AN4: statistic: 0.531 - p-value 0.000
+G - CM2 - GN : statistic: 0.531 - p-value 0.000
+G - CM3 - AN : statistic: 0.504 - p-value 0.000
+G - CM3 - AN1: statistic: 0.504 - p-value 0.000
+G - CM3 - AN2: statistic: 0.504 - p-value 0.000
+G - CM3 - AN3: statistic: 0.504 - p-value 0.000
+G - CM3 - AN4: statistic: 0.504 - p-value 0.000
+G - CM3 - GN : statistic: 0.504 - p-value 0.000
+G - PT2 - AN : statistic: 0.505 - p-value 0.000
+G - PT2 - AN1: statistic: 0.505 - p-value 0.000
+G - PT2 - AN2: statistic: 0.505 - p-value 0.000
+G - PT2 - AN3: statistic: 0.505 - p-value 0.000
+G - PT2 - AN4: statistic: 0.505 - p-value 0.000
+G - PT2 - GN : statistic: 0.505 - p-value 0.000
+G - PT3 - AN : statistic: 0.500 - p-value 0.000
+G - PT3 - AN1: statistic: 0.500 - p-value 0.000
+G - PT3 - AN2: statistic: 0.500 - p-value 0.000
+G - PT3 - AN3: statistic: 0.500 - p-value 0.000
+G - PT3 - AN4: statistic: 0.500 - p-value 0.000
+G - PT3 - GN : statistic: 0.500 - p-value 0.000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="significance">
+<h4>Significance<a class="headerlink" href="#significance" title="Permalink to this headline">#</a></h4>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_vals_dr</span> <span class="o">=</span> <span class="n">test_stat_sign</span><span class="p">(</span><span class="n">pred_data</span><span class="p">,</span> <span class="n">to_test</span><span class="p">)</span>
+
+<span class="n">p_vals_dr_styled</span> <span class="o">=</span> <span class="n">p_vals_dr</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_table_styles</span><span class="p">(</span><span class="n">styles</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.3f}</span><span class="s1">&#39;</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;background:goldenrod&quot;</span> <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mf">0.05</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">p_vals_dr_styled</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_9c631 th {
+  font-size: 11pt;
+  text-align: center;
+  font-family: Calibri;
+  background-color: white;
+  border-style: solid;
+  border-color: grey;
+  border-width: thin;
+}
+#T_9c631 td {
+  font-size: 11pt;
+  font-family: Calibri;
+  border-style: solid;
+  border-color: grey;
+  border-width: thin;
+}
+#T_9c631 caption {
+  caption-side: bottom;
+}
+#T_9c631_row0_col1, #T_9c631_row0_col2, #T_9c631_row2_col1, #T_9c631_row2_col2, #T_9c631_row4_col0, #T_9c631_row4_col2, #T_9c631_row5_col1, #T_9c631_row5_col2, #T_9c631_row6_col1, #T_9c631_row6_col2, #T_9c631_row8_col1, #T_9c631_row8_col2, #T_9c631_row10_col0, #T_9c631_row10_col1, #T_9c631_row10_col2, #T_9c631_row11_col0, #T_9c631_row11_col1, #T_9c631_row11_col2, #T_9c631_row12_col1, #T_9c631_row12_col2, #T_9c631_row14_col1, #T_9c631_row14_col2, #T_9c631_row16_col0, #T_9c631_row16_col1, #T_9c631_row16_col2, #T_9c631_row17_col0, #T_9c631_row17_col1, #T_9c631_row17_col2, #T_9c631_row18_col1, #T_9c631_row18_col2, #T_9c631_row19_col0, #T_9c631_row19_col1, #T_9c631_row19_col2, #T_9c631_row20_col1, #T_9c631_row20_col2, #T_9c631_row21_col1, #T_9c631_row21_col2, #T_9c631_row22_col0, #T_9c631_row22_col1, #T_9c631_row22_col2, #T_9c631_row23_col0, #T_9c631_row23_col1, #T_9c631_row23_col2, #T_9c631_row24_col1, #T_9c631_row24_col2, #T_9c631_row25_col1, #T_9c631_row25_col2, #T_9c631_row26_col0, #T_9c631_row26_col1, #T_9c631_row26_col2, #T_9c631_row27_col0, #T_9c631_row27_col1, #T_9c631_row27_col2, #T_9c631_row28_col1, #T_9c631_row28_col2, #T_9c631_row29_col1, #T_9c631_row29_col2 {
+  background: goldenrod;
+}
+</style>
+<table id="T_9c631">
+  <thead>
+    <tr>
+      <th class="blank" >&nbsp;</th>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_9c631_level0_col0" class="col_heading level0 col0" colspan="3">PR2</th>
+    </tr>
+    <tr>
+      <th class="blank" >&nbsp;</th>
+      <th class="index_name level1" >ST</th>
+      <th id="T_9c631_level1_col0" class="col_heading level1 col0" >D</th>
+      <th id="T_9c631_level1_col1" class="col_heading level1 col1" >G</th>
+      <th id="T_9c631_level1_col2" class="col_heading level1 col2" >Count</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >T</th>
+      <th class="index_name level1" >PS</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_9c631_level0_row0" class="row_heading level0 row0" rowspan="6">AN</th>
+      <th id="T_9c631_level1_row0" class="row_heading level1 row0" >AR2</th>
+      <td id="T_9c631_row0_col0" class="data row0 col0" >0.000</td>
+      <td id="T_9c631_row0_col1" class="data row0 col1" >0.866</td>
+      <td id="T_9c631_row0_col2" class="data row0 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row1" class="row_heading level1 row1" >AR3</th>
+      <td id="T_9c631_row1_col0" class="data row1 col0" >0.000</td>
+      <td id="T_9c631_row1_col1" class="data row1 col1" >0.013</td>
+      <td id="T_9c631_row1_col2" class="data row1 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row2" class="row_heading level1 row2" >CM2</th>
+      <td id="T_9c631_row2_col0" class="data row2 col0" >0.000</td>
+      <td id="T_9c631_row2_col1" class="data row2 col1" >0.080</td>
+      <td id="T_9c631_row2_col2" class="data row2 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row3" class="row_heading level1 row3" >CM3</th>
+      <td id="T_9c631_row3_col0" class="data row3 col0" >0.000</td>
+      <td id="T_9c631_row3_col1" class="data row3 col1" >0.001</td>
+      <td id="T_9c631_row3_col2" class="data row3 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row4" class="row_heading level1 row4" >PT2</th>
+      <td id="T_9c631_row4_col0" class="data row4 col0" >0.131</td>
+      <td id="T_9c631_row4_col1" class="data row4 col1" >0.008</td>
+      <td id="T_9c631_row4_col2" class="data row4 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row5" class="row_heading level1 row5" >PT3</th>
+      <td id="T_9c631_row5_col0" class="data row5 col0" >0.022</td>
+      <td id="T_9c631_row5_col1" class="data row5 col1" >0.123</td>
+      <td id="T_9c631_row5_col2" class="data row5 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level0_row6" class="row_heading level0 row6" rowspan="6">AN1</th>
+      <th id="T_9c631_level1_row6" class="row_heading level1 row6" >AR2</th>
+      <td id="T_9c631_row6_col0" class="data row6 col0" >0.000</td>
+      <td id="T_9c631_row6_col1" class="data row6 col1" >0.866</td>
+      <td id="T_9c631_row6_col2" class="data row6 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row7" class="row_heading level1 row7" >AR3</th>
+      <td id="T_9c631_row7_col0" class="data row7 col0" >0.000</td>
+      <td id="T_9c631_row7_col1" class="data row7 col1" >0.036</td>
+      <td id="T_9c631_row7_col2" class="data row7 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row8" class="row_heading level1 row8" >CM2</th>
+      <td id="T_9c631_row8_col0" class="data row8 col0" >0.000</td>
+      <td id="T_9c631_row8_col1" class="data row8 col1" >0.080</td>
+      <td id="T_9c631_row8_col2" class="data row8 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row9" class="row_heading level1 row9" >CM3</th>
+      <td id="T_9c631_row9_col0" class="data row9 col0" >0.000</td>
+      <td id="T_9c631_row9_col1" class="data row9 col1" >0.007</td>
+      <td id="T_9c631_row9_col2" class="data row9 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row10" class="row_heading level1 row10" >PT2</th>
+      <td id="T_9c631_row10_col0" class="data row10 col0" >0.594</td>
+      <td id="T_9c631_row10_col1" class="data row10 col1" >0.069</td>
+      <td id="T_9c631_row10_col2" class="data row10 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row11" class="row_heading level1 row11" >PT3</th>
+      <td id="T_9c631_row11_col0" class="data row11 col0" >0.722</td>
+      <td id="T_9c631_row11_col1" class="data row11 col1" >0.123</td>
+      <td id="T_9c631_row11_col2" class="data row11 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level0_row12" class="row_heading level0 row12" rowspan="6">AN2</th>
+      <th id="T_9c631_level1_row12" class="row_heading level1 row12" >AR2</th>
+      <td id="T_9c631_row12_col0" class="data row12 col0" >0.000</td>
+      <td id="T_9c631_row12_col1" class="data row12 col1" >0.345</td>
+      <td id="T_9c631_row12_col2" class="data row12 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row13" class="row_heading level1 row13" >AR3</th>
+      <td id="T_9c631_row13_col0" class="data row13 col0" >0.001</td>
+      <td id="T_9c631_row13_col1" class="data row13 col1" >0.036</td>
+      <td id="T_9c631_row13_col2" class="data row13 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row14" class="row_heading level1 row14" >CM2</th>
+      <td id="T_9c631_row14_col0" class="data row14 col0" >0.000</td>
+      <td id="T_9c631_row14_col1" class="data row14 col1" >0.144</td>
+      <td id="T_9c631_row14_col2" class="data row14 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row15" class="row_heading level1 row15" >CM3</th>
+      <td id="T_9c631_row15_col0" class="data row15 col0" >0.000</td>
+      <td id="T_9c631_row15_col1" class="data row15 col1" >0.026</td>
+      <td id="T_9c631_row15_col2" class="data row15 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row16" class="row_heading level1 row16" >PT2</th>
+      <td id="T_9c631_row16_col0" class="data row16 col0" >0.600</td>
+      <td id="T_9c631_row16_col1" class="data row16 col1" >0.069</td>
+      <td id="T_9c631_row16_col2" class="data row16 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row17" class="row_heading level1 row17" >PT3</th>
+      <td id="T_9c631_row17_col0" class="data row17 col0" >0.937</td>
+      <td id="T_9c631_row17_col1" class="data row17 col1" >0.260</td>
+      <td id="T_9c631_row17_col2" class="data row17 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level0_row18" class="row_heading level0 row18" rowspan="6">AN3</th>
+      <th id="T_9c631_level1_row18" class="row_heading level1 row18" >AR2</th>
+      <td id="T_9c631_row18_col0" class="data row18 col0" >0.000</td>
+      <td id="T_9c631_row18_col1" class="data row18 col1" >0.237</td>
+      <td id="T_9c631_row18_col2" class="data row18 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row19" class="row_heading level1 row19" >AR3</th>
+      <td id="T_9c631_row19_col0" class="data row19 col0" >0.332</td>
+      <td id="T_9c631_row19_col1" class="data row19 col1" >0.249</td>
+      <td id="T_9c631_row19_col2" class="data row19 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row20" class="row_heading level1 row20" >CM2</th>
+      <td id="T_9c631_row20_col0" class="data row20 col0" >0.031</td>
+      <td id="T_9c631_row20_col1" class="data row20 col1" >0.109</td>
+      <td id="T_9c631_row20_col2" class="data row20 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row21" class="row_heading level1 row21" >CM3</th>
+      <td id="T_9c631_row21_col0" class="data row21 col0" >0.000</td>
+      <td id="T_9c631_row21_col1" class="data row21 col1" >0.062</td>
+      <td id="T_9c631_row21_col2" class="data row21 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row22" class="row_heading level1 row22" >PT2</th>
+      <td id="T_9c631_row22_col0" class="data row22 col0" >0.173</td>
+      <td id="T_9c631_row22_col1" class="data row22 col1" >0.128</td>
+      <td id="T_9c631_row22_col2" class="data row22 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row23" class="row_heading level1 row23" >PT3</th>
+      <td id="T_9c631_row23_col0" class="data row23 col0" >0.394</td>
+      <td id="T_9c631_row23_col1" class="data row23 col1" >0.480</td>
+      <td id="T_9c631_row23_col2" class="data row23 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level0_row24" class="row_heading level0 row24" rowspan="6">AN4</th>
+      <th id="T_9c631_level1_row24" class="row_heading level1 row24" >AR2</th>
+      <td id="T_9c631_row24_col0" class="data row24 col0" >0.033</td>
+      <td id="T_9c631_row24_col1" class="data row24 col1" >0.225</td>
+      <td id="T_9c631_row24_col2" class="data row24 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row25" class="row_heading level1 row25" >AR3</th>
+      <td id="T_9c631_row25_col0" class="data row25 col0" >0.007</td>
+      <td id="T_9c631_row25_col1" class="data row25 col1" >1.000</td>
+      <td id="T_9c631_row25_col2" class="data row25 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row26" class="row_heading level1 row26" >CM2</th>
+      <td id="T_9c631_row26_col0" class="data row26 col0" >0.813</td>
+      <td id="T_9c631_row26_col1" class="data row26 col1" >0.600</td>
+      <td id="T_9c631_row26_col2" class="data row26 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row27" class="row_heading level1 row27" >CM3</th>
+      <td id="T_9c631_row27_col0" class="data row27 col0" >0.256</td>
+      <td id="T_9c631_row27_col1" class="data row27 col1" >0.753</td>
+      <td id="T_9c631_row27_col2" class="data row27 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row28" class="row_heading level1 row28" >PT2</th>
+      <td id="T_9c631_row28_col0" class="data row28 col0" >0.038</td>
+      <td id="T_9c631_row28_col1" class="data row28 col1" >0.500</td>
+      <td id="T_9c631_row28_col2" class="data row28 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_9c631_level1_row29" class="row_heading level1 row29" >PT3</th>
+      <td id="T_9c631_row29_col0" class="data row29 col0" >0.049</td>
+      <td id="T_9c631_row29_col1" class="data row29 col1" >0.480</td>
+      <td id="T_9c631_row29_col2" class="data row29 col2" >1.000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="number-of-recommended-courses-r">
+<h3>Number of Recommended Courses #R<a class="headerlink" href="#number-of-recommended-courses-r" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_test</span> <span class="o">=</span> <span class="s1">&#39;#R&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h4>Normality<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h4>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">recoms</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">to_test</span><span class="p">,</span> <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+            <span class="n">col</span><span class="o">=</span><span class="s1">&#39;T&#39;</span><span class="p">,</span> <span class="n">row</span><span class="o">=</span><span class="s1">&#39;PS&#39;</span><span class="p">,</span>
+           <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;ST&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/f7bb95d2a977d393870ec2e07eeed887f778dd0cf5527a74f5aa2bc930d102a1.png" src="../_images/f7bb95d2a977d393870ec2e07eeed887f778dd0cf5527a74f5aa2bc930d102a1.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">]:</span>
+    
+    <span class="k">for</span> <span class="n">ps</span> <span class="ow">in</span> <span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">TYPES</span><span class="p">:</span>
+    
+            <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">recoms</span><span class="p">[(</span><span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;ST&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">st</span><span class="p">)</span> 
+                                      <span class="o">&amp;</span> <span class="p">(</span><span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">ps</span><span class="p">)</span> 
+                                      <span class="o">&amp;</span> <span class="p">(</span><span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">t</span><span class="p">)][</span><span class="n">to_test</span><span class="p">],</span> <span class="s1">&#39;norm&#39;</span><span class="p">)</span> <span class="c1">#p-value near zero rejects normality</span>
+            <span class="n">stat</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">p_v</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="c1">#print(res)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">ps</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1"> &lt;3</span><span class="si">}</span><span class="s1">: statistic: </span><span class="si">{</span><span class="n">stat</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> - p-value </span><span class="si">{</span><span class="n">p_v</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D - AR2 - AN : statistic: 0.759 - p-value 0.000
+D - AR2 - AN1: statistic: 0.843 - p-value 0.000
+D - AR2 - AN2: statistic: 0.955 - p-value 0.000
+D - AR2 - AN3: statistic: 0.970 - p-value 0.000
+D - AR2 - AN4: statistic: 0.991 - p-value 0.000
+D - AR2 - GN : statistic: 0.962 - p-value 0.000
+D - AR3 - AN : statistic: 0.500 - p-value 0.000
+D - AR3 - AN1: statistic: 0.655 - p-value 0.000
+D - AR3 - AN2: statistic: 0.813 - p-value 0.000
+D - AR3 - AN3: statistic: 0.947 - p-value 0.000
+D - AR3 - AN4: statistic: 0.970 - p-value 0.000
+D - AR3 - GN : statistic: 0.782 - p-value 0.000
+D - CM2 - AN : statistic: 0.516 - p-value 0.000
+D - CM2 - AN1: statistic: 0.805 - p-value 0.000
+D - CM2 - AN2: statistic: 0.941 - p-value 0.000
+D - CM2 - AN3: statistic: 0.959 - p-value 0.000
+D - CM2 - AN4: statistic: 0.981 - p-value 0.000
+D - CM2 - GN : statistic: 0.968 - p-value 0.000
+D - CM3 - AN : statistic: 0.500 - p-value 0.000
+D - CM3 - AN1: statistic: 0.500 - p-value 0.000
+D - CM3 - AN2: statistic: 0.701 - p-value 0.000
+D - CM3 - AN3: statistic: 0.746 - p-value 0.000
+D - CM3 - AN4: statistic: 0.751 - p-value 0.000
+D - CM3 - GN : statistic: 0.746 - p-value 0.000
+D - PT2 - AN : statistic: 0.790 - p-value 0.000
+D - PT2 - AN1: statistic: 0.841 - p-value 0.000
+D - PT2 - AN2: statistic: 0.926 - p-value 0.000
+D - PT2 - AN3: statistic: 0.999 - p-value 0.000
+D - PT2 - AN4: statistic: 0.999 - p-value 0.000
+D - PT2 - GN : statistic: 0.943 - p-value 0.000
+D - PT3 - AN : statistic: 0.500 - p-value 0.000
+D - PT3 - AN1: statistic: 0.686 - p-value 0.000
+D - PT3 - AN2: statistic: 0.755 - p-value 0.000
+D - PT3 - AN3: statistic: 0.772 - p-value 0.000
+D - PT3 - AN4: statistic: 0.703 - p-value 0.000
+D - PT3 - GN : statistic: 0.790 - p-value 0.000
+G - AR2 - AN : statistic: 0.940 - p-value 0.000
+G - AR2 - AN1: statistic: 0.958 - p-value 0.000
+G - AR2 - AN2: statistic: 0.966 - p-value 0.000
+G - AR2 - AN3: statistic: 0.983 - p-value 0.000
+G - AR2 - AN4: statistic: 0.994 - p-value 0.000
+G - AR2 - GN : statistic: 0.970 - p-value 0.000
+G - AR3 - AN : statistic: 0.903 - p-value 0.000
+G - AR3 - AN1: statistic: 0.925 - p-value 0.000
+G - AR3 - AN2: statistic: 0.949 - p-value 0.000
+G - AR3 - AN3: statistic: 0.970 - p-value 0.000
+G - AR3 - AN4: statistic: 0.987 - p-value 0.000
+G - AR3 - GN : statistic: 0.954 - p-value 0.000
+G - CM2 - AN : statistic: 0.931 - p-value 0.000
+G - CM2 - AN1: statistic: 0.948 - p-value 0.000
+G - CM2 - AN2: statistic: 0.974 - p-value 0.000
+G - CM2 - AN3: statistic: 0.976 - p-value 0.000
+G - CM2 - AN4: statistic: 0.992 - p-value 0.000
+G - CM2 - GN : statistic: 0.971 - p-value 0.000
+G - CM3 - AN : statistic: 0.876 - p-value 0.000
+G - CM3 - AN1: statistic: 0.923 - p-value 0.000
+G - CM3 - AN2: statistic: 0.935 - p-value 0.000
+G - CM3 - AN3: statistic: 0.943 - p-value 0.000
+G - CM3 - AN4: statistic: 0.963 - p-value 0.000
+G - CM3 - GN : statistic: 0.948 - p-value 0.000
+G - PT2 - AN : statistic: 0.964 - p-value 0.000
+G - PT2 - AN1: statistic: 0.979 - p-value 0.000
+G - PT2 - AN2: statistic: 0.989 - p-value 0.000
+G - PT2 - AN3: statistic: 0.994 - p-value 0.000
+G - PT2 - AN4: statistic: 0.994 - p-value 0.000
+G - PT2 - GN : statistic: 0.989 - p-value 0.000
+G - PT3 - AN : statistic: 0.792 - p-value 0.000
+G - PT3 - AN1: statistic: 0.817 - p-value 0.000
+G - PT3 - AN2: statistic: 0.827 - p-value 0.000
+G - PT3 - AN3: statistic: 0.836 - p-value 0.000
+G - PT3 - AN4: statistic: 0.831 - p-value 0.000
+G - PT3 - GN : statistic: 0.836 - p-value 0.000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id2">
+<h4>Significance<a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h4>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_vals_r</span> <span class="o">=</span> <span class="n">test_stat_sign</span><span class="p">(</span><span class="n">recoms</span><span class="p">,</span> <span class="n">to_test</span><span class="p">)</span>
+<span class="n">p_vals_r_styled</span> <span class="o">=</span> <span class="n">p_vals_r</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_table_styles</span><span class="p">(</span><span class="n">styles</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.3f}</span><span class="s1">&#39;</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;background:goldenrod&quot;</span> <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mf">0.05</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">p_vals_r_styled</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_c8d2c th {
+  font-size: 11pt;
+  text-align: center;
+  font-family: Calibri;
+  background-color: white;
+  border-style: solid;
+  border-color: grey;
+  border-width: thin;
+}
+#T_c8d2c td {
+  font-size: 11pt;
+  font-family: Calibri;
+  border-style: solid;
+  border-color: grey;
+  border-width: thin;
+}
+#T_c8d2c caption {
+  caption-side: bottom;
+}
+#T_c8d2c_row11_col0, #T_c8d2c_row11_col2, #T_c8d2c_row12_col0, #T_c8d2c_row12_col2, #T_c8d2c_row16_col0, #T_c8d2c_row16_col2, #T_c8d2c_row17_col0, #T_c8d2c_row17_col2, #T_c8d2c_row18_col1, #T_c8d2c_row18_col2, #T_c8d2c_row19_col1, #T_c8d2c_row19_col2, #T_c8d2c_row20_col1, #T_c8d2c_row20_col2, #T_c8d2c_row21_col0, #T_c8d2c_row21_col1, #T_c8d2c_row21_col2, #T_c8d2c_row22_col0, #T_c8d2c_row22_col2, #T_c8d2c_row23_col0, #T_c8d2c_row23_col1, #T_c8d2c_row23_col2, #T_c8d2c_row28_col1, #T_c8d2c_row28_col2, #T_c8d2c_row29_col1, #T_c8d2c_row29_col2 {
+  background: goldenrod;
+}
+</style>
+<table id="T_c8d2c">
+  <thead>
+    <tr>
+      <th class="blank" >&nbsp;</th>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_c8d2c_level0_col0" class="col_heading level0 col0" colspan="3">#R</th>
+    </tr>
+    <tr>
+      <th class="blank" >&nbsp;</th>
+      <th class="index_name level1" >ST</th>
+      <th id="T_c8d2c_level1_col0" class="col_heading level1 col0" >D</th>
+      <th id="T_c8d2c_level1_col1" class="col_heading level1 col1" >G</th>
+      <th id="T_c8d2c_level1_col2" class="col_heading level1 col2" >Count</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >T</th>
+      <th class="index_name level1" >PS</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_c8d2c_level0_row0" class="row_heading level0 row0" rowspan="6">AN</th>
+      <th id="T_c8d2c_level1_row0" class="row_heading level1 row0" >AR2</th>
+      <td id="T_c8d2c_row0_col0" class="data row0 col0" >0.000</td>
+      <td id="T_c8d2c_row0_col1" class="data row0 col1" >0.000</td>
+      <td id="T_c8d2c_row0_col2" class="data row0 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row1" class="row_heading level1 row1" >AR3</th>
+      <td id="T_c8d2c_row1_col0" class="data row1 col0" >0.000</td>
+      <td id="T_c8d2c_row1_col1" class="data row1 col1" >0.000</td>
+      <td id="T_c8d2c_row1_col2" class="data row1 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row2" class="row_heading level1 row2" >CM2</th>
+      <td id="T_c8d2c_row2_col0" class="data row2 col0" >0.000</td>
+      <td id="T_c8d2c_row2_col1" class="data row2 col1" >0.000</td>
+      <td id="T_c8d2c_row2_col2" class="data row2 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row3" class="row_heading level1 row3" >CM3</th>
+      <td id="T_c8d2c_row3_col0" class="data row3 col0" >0.000</td>
+      <td id="T_c8d2c_row3_col1" class="data row3 col1" >0.000</td>
+      <td id="T_c8d2c_row3_col2" class="data row3 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row4" class="row_heading level1 row4" >PT2</th>
+      <td id="T_c8d2c_row4_col0" class="data row4 col0" >0.000</td>
+      <td id="T_c8d2c_row4_col1" class="data row4 col1" >0.000</td>
+      <td id="T_c8d2c_row4_col2" class="data row4 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row5" class="row_heading level1 row5" >PT3</th>
+      <td id="T_c8d2c_row5_col0" class="data row5 col0" >0.000</td>
+      <td id="T_c8d2c_row5_col1" class="data row5 col1" >0.000</td>
+      <td id="T_c8d2c_row5_col2" class="data row5 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level0_row6" class="row_heading level0 row6" rowspan="6">AN1</th>
+      <th id="T_c8d2c_level1_row6" class="row_heading level1 row6" >AR2</th>
+      <td id="T_c8d2c_row6_col0" class="data row6 col0" >0.000</td>
+      <td id="T_c8d2c_row6_col1" class="data row6 col1" >0.000</td>
+      <td id="T_c8d2c_row6_col2" class="data row6 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row7" class="row_heading level1 row7" >AR3</th>
+      <td id="T_c8d2c_row7_col0" class="data row7 col0" >0.000</td>
+      <td id="T_c8d2c_row7_col1" class="data row7 col1" >0.000</td>
+      <td id="T_c8d2c_row7_col2" class="data row7 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row8" class="row_heading level1 row8" >CM2</th>
+      <td id="T_c8d2c_row8_col0" class="data row8 col0" >0.000</td>
+      <td id="T_c8d2c_row8_col1" class="data row8 col1" >0.000</td>
+      <td id="T_c8d2c_row8_col2" class="data row8 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row9" class="row_heading level1 row9" >CM3</th>
+      <td id="T_c8d2c_row9_col0" class="data row9 col0" >0.000</td>
+      <td id="T_c8d2c_row9_col1" class="data row9 col1" >0.000</td>
+      <td id="T_c8d2c_row9_col2" class="data row9 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row10" class="row_heading level1 row10" >PT2</th>
+      <td id="T_c8d2c_row10_col0" class="data row10 col0" >0.000</td>
+      <td id="T_c8d2c_row10_col1" class="data row10 col1" >0.000</td>
+      <td id="T_c8d2c_row10_col2" class="data row10 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row11" class="row_heading level1 row11" >PT3</th>
+      <td id="T_c8d2c_row11_col0" class="data row11 col0" >0.069</td>
+      <td id="T_c8d2c_row11_col1" class="data row11 col1" >0.002</td>
+      <td id="T_c8d2c_row11_col2" class="data row11 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level0_row12" class="row_heading level0 row12" rowspan="6">AN2</th>
+      <th id="T_c8d2c_level1_row12" class="row_heading level1 row12" >AR2</th>
+      <td id="T_c8d2c_row12_col0" class="data row12 col0" >0.909</td>
+      <td id="T_c8d2c_row12_col1" class="data row12 col1" >0.007</td>
+      <td id="T_c8d2c_row12_col2" class="data row12 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row13" class="row_heading level1 row13" >AR3</th>
+      <td id="T_c8d2c_row13_col0" class="data row13 col0" >0.008</td>
+      <td id="T_c8d2c_row13_col1" class="data row13 col1" >0.000</td>
+      <td id="T_c8d2c_row13_col2" class="data row13 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row14" class="row_heading level1 row14" >CM2</th>
+      <td id="T_c8d2c_row14_col0" class="data row14 col0" >0.002</td>
+      <td id="T_c8d2c_row14_col1" class="data row14 col1" >0.016</td>
+      <td id="T_c8d2c_row14_col2" class="data row14 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row15" class="row_heading level1 row15" >CM3</th>
+      <td id="T_c8d2c_row15_col0" class="data row15 col0" >0.003</td>
+      <td id="T_c8d2c_row15_col1" class="data row15 col1" >0.003</td>
+      <td id="T_c8d2c_row15_col2" class="data row15 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row16" class="row_heading level1 row16" >PT2</th>
+      <td id="T_c8d2c_row16_col0" class="data row16 col0" >0.144</td>
+      <td id="T_c8d2c_row16_col1" class="data row16 col1" >0.000</td>
+      <td id="T_c8d2c_row16_col2" class="data row16 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row17" class="row_heading level1 row17" >PT3</th>
+      <td id="T_c8d2c_row17_col0" class="data row17 col0" >0.507</td>
+      <td id="T_c8d2c_row17_col1" class="data row17 col1" >0.017</td>
+      <td id="T_c8d2c_row17_col2" class="data row17 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level0_row18" class="row_heading level0 row18" rowspan="6">AN3</th>
+      <th id="T_c8d2c_level1_row18" class="row_heading level1 row18" >AR2</th>
+      <td id="T_c8d2c_row18_col0" class="data row18 col0" >0.019</td>
+      <td id="T_c8d2c_row18_col1" class="data row18 col1" >0.828</td>
+      <td id="T_c8d2c_row18_col2" class="data row18 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row19" class="row_heading level1 row19" >AR3</th>
+      <td id="T_c8d2c_row19_col0" class="data row19 col0" >0.001</td>
+      <td id="T_c8d2c_row19_col1" class="data row19 col1" >0.509</td>
+      <td id="T_c8d2c_row19_col2" class="data row19 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row20" class="row_heading level1 row20" >CM2</th>
+      <td id="T_c8d2c_row20_col0" class="data row20 col0" >0.012</td>
+      <td id="T_c8d2c_row20_col1" class="data row20 col1" >0.304</td>
+      <td id="T_c8d2c_row20_col2" class="data row20 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row21" class="row_heading level1 row21" >CM3</th>
+      <td id="T_c8d2c_row21_col0" class="data row21 col0" >0.599</td>
+      <td id="T_c8d2c_row21_col1" class="data row21 col1" >0.845</td>
+      <td id="T_c8d2c_row21_col2" class="data row21 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row22" class="row_heading level1 row22" >PT2</th>
+      <td id="T_c8d2c_row22_col0" class="data row22 col0" >0.107</td>
+      <td id="T_c8d2c_row22_col1" class="data row22 col1" >0.007</td>
+      <td id="T_c8d2c_row22_col2" class="data row22 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row23" class="row_heading level1 row23" >PT3</th>
+      <td id="T_c8d2c_row23_col0" class="data row23 col0" >0.378</td>
+      <td id="T_c8d2c_row23_col1" class="data row23 col1" >0.817</td>
+      <td id="T_c8d2c_row23_col2" class="data row23 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level0_row24" class="row_heading level0 row24" rowspan="6">AN4</th>
+      <th id="T_c8d2c_level1_row24" class="row_heading level1 row24" >AR2</th>
+      <td id="T_c8d2c_row24_col0" class="data row24 col0" >0.000</td>
+      <td id="T_c8d2c_row24_col1" class="data row24 col1" >0.000</td>
+      <td id="T_c8d2c_row24_col2" class="data row24 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row25" class="row_heading level1 row25" >AR3</th>
+      <td id="T_c8d2c_row25_col0" class="data row25 col0" >0.000</td>
+      <td id="T_c8d2c_row25_col1" class="data row25 col1" >0.000</td>
+      <td id="T_c8d2c_row25_col2" class="data row25 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row26" class="row_heading level1 row26" >CM2</th>
+      <td id="T_c8d2c_row26_col0" class="data row26 col0" >0.000</td>
+      <td id="T_c8d2c_row26_col1" class="data row26 col1" >0.000</td>
+      <td id="T_c8d2c_row26_col2" class="data row26 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row27" class="row_heading level1 row27" >CM3</th>
+      <td id="T_c8d2c_row27_col0" class="data row27 col0" >0.000</td>
+      <td id="T_c8d2c_row27_col1" class="data row27 col1" >0.000</td>
+      <td id="T_c8d2c_row27_col2" class="data row27 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row28" class="row_heading level1 row28" >PT2</th>
+      <td id="T_c8d2c_row28_col0" class="data row28 col0" >0.001</td>
+      <td id="T_c8d2c_row28_col1" class="data row28 col1" >0.941</td>
+      <td id="T_c8d2c_row28_col2" class="data row28 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_c8d2c_level1_row29" class="row_heading level1 row29" >PT3</th>
+      <td id="T_c8d2c_row29_col0" class="data row29 col0" >0.019</td>
+      <td id="T_c8d2c_row29_col1" class="data row29 col1" >0.145</td>
+      <td id="T_c8d2c_row29_col2" class="data row29 col2" >1.000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+<div class="section" id="intersection">
+<h3>Intersection<a class="headerlink" href="#intersection" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">to_test</span> <span class="o">=</span> <span class="s1">&#39;F1&#39;</span>
+
+<span class="c1"># just for the plot</span>
+<span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;F1_binned&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;F1&#39;</span><span class="p">],</span> <span class="mi">10</span><span class="p">)</span> 
+<span class="n">recoms</span><span class="p">[[</span><span class="s1">&#39;F1&#39;</span><span class="p">,</span><span class="s1">&#39;F1_binned&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">random_state</span><span class="o">=</span><span class="n">SEED</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>F1</th>
+      <th>F1_binned</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>8464</th>
+      <td>1.0</td>
+      <td>(0.9, 1.0]</td>
+    </tr>
+    <tr>
+      <th>7264</th>
+      <td>1.0</td>
+      <td>(0.9, 1.0]</td>
+    </tr>
+    <tr>
+      <th>9111</th>
+      <td>0.8</td>
+      <td>(0.7, 0.8]</td>
+    </tr>
+    <tr>
+      <th>1898</th>
+      <td>0.8</td>
+      <td>(0.7, 0.8]</td>
+    </tr>
+    <tr>
+      <th>1373</th>
+      <td>1.0</td>
+      <td>(0.9, 1.0]</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="section" id="id3">
+<h4>Normality<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h4>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cp</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">catplot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">recoms</span><span class="p">,</span>
+                 <span class="n">x</span><span class="o">=</span><span class="s1">&#39;F1_binned&#39;</span><span class="p">,</span>
+                 <span class="n">kind</span><span class="o">=</span><span class="s2">&quot;count&quot;</span><span class="p">,</span>
+                 <span class="n">col</span><span class="o">=</span><span class="s1">&#39;T&#39;</span><span class="p">,</span>
+                 <span class="n">row</span><span class="o">=</span><span class="s1">&#39;PS&#39;</span><span class="p">,</span>
+                 <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;ST&#39;</span><span class="p">)</span>
+
+<span class="n">loc</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">()</span>
+<span class="n">cp</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../_images/11079fcb22f27e13bc28119c2946a85905d3fbfaa69c7880a3977c20b6b841c4.png" src="../_images/11079fcb22f27e13bc28119c2946a85905d3fbfaa69c7880a3977c20b6b841c4.png" />
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;G&#39;</span><span class="p">]:</span>
+    
+    <span class="k">for</span> <span class="n">ps</span> <span class="ow">in</span> <span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">():</span>
+    
+        <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">TYPES</span><span class="p">:</span>
+    
+            <span class="n">res</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">kstest</span><span class="p">(</span><span class="n">recoms</span><span class="p">[(</span><span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;ST&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">st</span><span class="p">)</span> 
+                                      <span class="o">&amp;</span> <span class="p">(</span><span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;PS&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">ps</span><span class="p">)</span> 
+                                      <span class="o">&amp;</span> <span class="p">(</span><span class="n">recoms</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">t</span><span class="p">)][</span><span class="n">to_test</span><span class="p">],</span> <span class="s1">&#39;norm&#39;</span><span class="p">)</span> <span class="c1">#p-value near zero rejects normality</span>
+            <span class="n">stat</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">p_v</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="c1">#print(res)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">st</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">ps</span><span class="si">}</span><span class="s1"> - </span><span class="si">{</span><span class="n">t</span><span class="si">:</span><span class="s1"> &lt;3</span><span class="si">}</span><span class="s1">: statistic: </span><span class="si">{</span><span class="n">stat</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> - p-value </span><span class="si">{</span><span class="n">p_v</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D - AR2 - AN : statistic: 0.500 - p-value 0.000
+D - AR2 - AN1: statistic: 0.500 - p-value 0.000
+D - AR2 - AN2: statistic: 0.500 - p-value 0.000
+D - AR2 - AN3: statistic: 0.500 - p-value 0.000
+D - AR2 - AN4: statistic: 0.500 - p-value 0.000
+D - AR2 - GN : statistic: 0.500 - p-value 0.000
+D - AR3 - AN : statistic: 0.500 - p-value 0.000
+D - AR3 - AN1: statistic: 0.500 - p-value 0.000
+D - AR3 - AN2: statistic: 0.500 - p-value 0.000
+D - AR3 - AN3: statistic: 0.500 - p-value 0.000
+D - AR3 - AN4: statistic: 0.500 - p-value 0.000
+D - AR3 - GN : statistic: 0.500 - p-value 0.000
+D - CM2 - AN : statistic: 0.500 - p-value 0.000
+D - CM2 - AN1: statistic: 0.500 - p-value 0.000
+D - CM2 - AN2: statistic: 0.500 - p-value 0.000
+D - CM2 - AN3: statistic: 0.500 - p-value 0.000
+D - CM2 - AN4: statistic: 0.500 - p-value 0.000
+D - CM2 - GN : statistic: 0.500 - p-value 0.000
+D - CM3 - AN : statistic: 0.500 - p-value 0.000
+D - CM3 - AN1: statistic: 0.500 - p-value 0.000
+D - CM3 - AN2: statistic: 0.500 - p-value 0.000
+D - CM3 - AN3: statistic: 0.500 - p-value 0.000
+D - CM3 - AN4: statistic: 0.500 - p-value 0.000
+D - CM3 - GN : statistic: 0.500 - p-value 0.000
+D - PT2 - AN : statistic: 0.500 - p-value 0.000
+D - PT2 - AN1: statistic: 0.500 - p-value 0.000
+D - PT2 - AN2: statistic: 0.500 - p-value 0.000
+D - PT2 - AN3: statistic: 0.500 - p-value 0.000
+D - PT2 - AN4: statistic: 0.500 - p-value 0.000
+D - PT2 - GN : statistic: 0.500 - p-value 0.000
+D - PT3 - AN : statistic: 0.500 - p-value 0.000
+D - PT3 - AN1: statistic: 0.500 - p-value 0.000
+D - PT3 - AN2: statistic: 0.500 - p-value 0.000
+D - PT3 - AN3: statistic: 0.500 - p-value 0.000
+D - PT3 - AN4: statistic: 0.500 - p-value 0.000
+D - PT3 - GN : statistic: 0.500 - p-value 0.000
+G - AR2 - AN : statistic: 0.637 - p-value 0.000
+G - AR2 - AN1: statistic: 0.639 - p-value 0.000
+G - AR2 - AN2: statistic: 0.646 - p-value 0.000
+G - AR2 - AN3: statistic: 0.651 - p-value 0.000
+G - AR2 - AN4: statistic: 0.669 - p-value 0.000
+G - AR2 - GN : statistic: 0.658 - p-value 0.000
+G - AR3 - AN : statistic: 0.592 - p-value 0.000
+G - AR3 - AN1: statistic: 0.602 - p-value 0.000
+G - AR3 - AN2: statistic: 0.610 - p-value 0.000
+G - AR3 - AN3: statistic: 0.628 - p-value 0.000
+G - AR3 - AN4: statistic: 0.629 - p-value 0.000
+G - AR3 - GN : statistic: 0.617 - p-value 0.000
+G - CM2 - AN : statistic: 0.630 - p-value 0.000
+G - CM2 - AN1: statistic: 0.639 - p-value 0.000
+G - CM2 - AN2: statistic: 0.659 - p-value 0.000
+G - CM2 - AN3: statistic: 0.670 - p-value 0.000
+G - CM2 - AN4: statistic: 0.675 - p-value 0.000
+G - CM2 - GN : statistic: 0.659 - p-value 0.000
+G - CM3 - AN : statistic: 0.525 - p-value 0.000
+G - CM3 - AN1: statistic: 0.557 - p-value 0.000
+G - CM3 - AN2: statistic: 0.567 - p-value 0.000
+G - CM3 - AN3: statistic: 0.583 - p-value 0.000
+G - CM3 - AN4: statistic: 0.593 - p-value 0.000
+G - CM3 - GN : statistic: 0.584 - p-value 0.000
+G - PT2 - AN : statistic: 0.682 - p-value 0.000
+G - PT2 - AN1: statistic: 0.672 - p-value 0.000
+G - PT2 - AN2: statistic: 0.672 - p-value 0.000
+G - PT2 - AN3: statistic: 0.672 - p-value 0.000
+G - PT2 - AN4: statistic: 0.676 - p-value 0.000
+G - PT2 - GN : statistic: 0.672 - p-value 0.000
+G - PT3 - AN : statistic: 0.500 - p-value 0.000
+G - PT3 - AN1: statistic: 0.500 - p-value 0.000
+G - PT3 - AN2: statistic: 0.500 - p-value 0.000
+G - PT3 - AN3: statistic: 0.500 - p-value 0.000
+G - PT3 - AN4: statistic: 0.500 - p-value 0.000
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>G - PT3 - GN : statistic: 0.500 - p-value 0.000
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id4">
+<h4>Significance<a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h4>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_vals_f</span> <span class="o">=</span> <span class="n">test_stat_sign</span><span class="p">(</span><span class="n">recoms</span><span class="p">,</span> <span class="n">to_test</span><span class="p">)</span>
+<span class="n">p_vals_f_styled</span> <span class="o">=</span> <span class="n">p_vals_f</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_table_styles</span><span class="p">(</span><span class="n">styles</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.3f}</span><span class="s1">&#39;</span><span class="p">)</span>\
+        <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;background:goldenrod&quot;</span> <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;</span> <span class="mf">0.05</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">p_vals_f_styled</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_bd2fb th {
+  font-size: 11pt;
+  text-align: center;
+  font-family: Calibri;
+  background-color: white;
+  border-style: solid;
+  border-color: grey;
+  border-width: thin;
+}
+#T_bd2fb td {
+  font-size: 11pt;
+  font-family: Calibri;
+  border-style: solid;
+  border-color: grey;
+  border-width: thin;
+}
+#T_bd2fb caption {
+  caption-side: bottom;
+}
+#T_bd2fb_row1_col0, #T_bd2fb_row1_col2, #T_bd2fb_row4_col0, #T_bd2fb_row4_col1, #T_bd2fb_row4_col2, #T_bd2fb_row5_col0, #T_bd2fb_row5_col2, #T_bd2fb_row6_col0, #T_bd2fb_row6_col2, #T_bd2fb_row7_col0, #T_bd2fb_row7_col2, #T_bd2fb_row8_col0, #T_bd2fb_row8_col2, #T_bd2fb_row9_col0, #T_bd2fb_row9_col2, #T_bd2fb_row10_col0, #T_bd2fb_row10_col1, #T_bd2fb_row10_col2, #T_bd2fb_row11_col0, #T_bd2fb_row11_col1, #T_bd2fb_row11_col2, #T_bd2fb_row12_col0, #T_bd2fb_row12_col1, #T_bd2fb_row12_col2, #T_bd2fb_row13_col1, #T_bd2fb_row13_col2, #T_bd2fb_row14_col0, #T_bd2fb_row14_col1, #T_bd2fb_row14_col2, #T_bd2fb_row15_col0, #T_bd2fb_row15_col1, #T_bd2fb_row15_col2, #T_bd2fb_row16_col0, #T_bd2fb_row16_col1, #T_bd2fb_row16_col2, #T_bd2fb_row17_col0, #T_bd2fb_row17_col1, #T_bd2fb_row17_col2, #T_bd2fb_row18_col0, #T_bd2fb_row18_col1, #T_bd2fb_row18_col2, #T_bd2fb_row19_col1, #T_bd2fb_row19_col2, #T_bd2fb_row20_col0, #T_bd2fb_row20_col1, #T_bd2fb_row20_col2, #T_bd2fb_row21_col1, #T_bd2fb_row21_col2, #T_bd2fb_row22_col0, #T_bd2fb_row22_col2, #T_bd2fb_row23_col0, #T_bd2fb_row23_col1, #T_bd2fb_row23_col2, #T_bd2fb_row24_col0, #T_bd2fb_row24_col1, #T_bd2fb_row24_col2, #T_bd2fb_row25_col0, #T_bd2fb_row25_col2, #T_bd2fb_row28_col0, #T_bd2fb_row28_col2, #T_bd2fb_row29_col0, #T_bd2fb_row29_col1, #T_bd2fb_row29_col2 {
+  background: goldenrod;
+}
+</style>
+<table id="T_bd2fb">
+  <thead>
+    <tr>
+      <th class="blank" >&nbsp;</th>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_bd2fb_level0_col0" class="col_heading level0 col0" colspan="3">F1</th>
+    </tr>
+    <tr>
+      <th class="blank" >&nbsp;</th>
+      <th class="index_name level1" >ST</th>
+      <th id="T_bd2fb_level1_col0" class="col_heading level1 col0" >D</th>
+      <th id="T_bd2fb_level1_col1" class="col_heading level1 col1" >G</th>
+      <th id="T_bd2fb_level1_col2" class="col_heading level1 col2" >Count</th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >T</th>
+      <th class="index_name level1" >PS</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_bd2fb_level0_row0" class="row_heading level0 row0" rowspan="6">AN</th>
+      <th id="T_bd2fb_level1_row0" class="row_heading level1 row0" >AR2</th>
+      <td id="T_bd2fb_row0_col0" class="data row0 col0" >0.049</td>
+      <td id="T_bd2fb_row0_col1" class="data row0 col1" >0.000</td>
+      <td id="T_bd2fb_row0_col2" class="data row0 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row1" class="row_heading level1 row1" >AR3</th>
+      <td id="T_bd2fb_row1_col0" class="data row1 col0" >0.066</td>
+      <td id="T_bd2fb_row1_col1" class="data row1 col1" >0.000</td>
+      <td id="T_bd2fb_row1_col2" class="data row1 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row2" class="row_heading level1 row2" >CM2</th>
+      <td id="T_bd2fb_row2_col0" class="data row2 col0" >0.000</td>
+      <td id="T_bd2fb_row2_col1" class="data row2 col1" >0.000</td>
+      <td id="T_bd2fb_row2_col2" class="data row2 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row3" class="row_heading level1 row3" >CM3</th>
+      <td id="T_bd2fb_row3_col0" class="data row3 col0" >0.005</td>
+      <td id="T_bd2fb_row3_col1" class="data row3 col1" >0.000</td>
+      <td id="T_bd2fb_row3_col2" class="data row3 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row4" class="row_heading level1 row4" >PT2</th>
+      <td id="T_bd2fb_row4_col0" class="data row4 col0" >0.475</td>
+      <td id="T_bd2fb_row4_col1" class="data row4 col1" >0.264</td>
+      <td id="T_bd2fb_row4_col2" class="data row4 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row5" class="row_heading level1 row5" >PT3</th>
+      <td id="T_bd2fb_row5_col0" class="data row5 col0" >0.064</td>
+      <td id="T_bd2fb_row5_col1" class="data row5 col1" >0.026</td>
+      <td id="T_bd2fb_row5_col2" class="data row5 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level0_row6" class="row_heading level0 row6" rowspan="6">AN1</th>
+      <th id="T_bd2fb_level1_row6" class="row_heading level1 row6" >AR2</th>
+      <td id="T_bd2fb_row6_col0" class="data row6 col0" >0.580</td>
+      <td id="T_bd2fb_row6_col1" class="data row6 col1" >0.004</td>
+      <td id="T_bd2fb_row6_col2" class="data row6 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row7" class="row_heading level1 row7" >AR3</th>
+      <td id="T_bd2fb_row7_col0" class="data row7 col0" >0.825</td>
+      <td id="T_bd2fb_row7_col1" class="data row7 col1" >0.002</td>
+      <td id="T_bd2fb_row7_col2" class="data row7 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row8" class="row_heading level1 row8" >CM2</th>
+      <td id="T_bd2fb_row8_col0" class="data row8 col0" >0.198</td>
+      <td id="T_bd2fb_row8_col1" class="data row8 col1" >0.003</td>
+      <td id="T_bd2fb_row8_col2" class="data row8 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row9" class="row_heading level1 row9" >CM3</th>
+      <td id="T_bd2fb_row9_col0" class="data row9 col0" >0.789</td>
+      <td id="T_bd2fb_row9_col1" class="data row9 col1" >0.012</td>
+      <td id="T_bd2fb_row9_col2" class="data row9 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row10" class="row_heading level1 row10" >PT2</th>
+      <td id="T_bd2fb_row10_col0" class="data row10 col0" >0.495</td>
+      <td id="T_bd2fb_row10_col1" class="data row10 col1" >0.600</td>
+      <td id="T_bd2fb_row10_col2" class="data row10 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row11" class="row_heading level1 row11" >PT3</th>
+      <td id="T_bd2fb_row11_col0" class="data row11 col0" >0.382</td>
+      <td id="T_bd2fb_row11_col1" class="data row11 col1" >0.164</td>
+      <td id="T_bd2fb_row11_col2" class="data row11 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level0_row12" class="row_heading level0 row12" rowspan="6">AN2</th>
+      <th id="T_bd2fb_level1_row12" class="row_heading level1 row12" >AR2</th>
+      <td id="T_bd2fb_row12_col0" class="data row12 col0" >0.805</td>
+      <td id="T_bd2fb_row12_col1" class="data row12 col1" >0.075</td>
+      <td id="T_bd2fb_row12_col2" class="data row12 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row13" class="row_heading level1 row13" >AR3</th>
+      <td id="T_bd2fb_row13_col0" class="data row13 col0" >0.006</td>
+      <td id="T_bd2fb_row13_col1" class="data row13 col1" >0.289</td>
+      <td id="T_bd2fb_row13_col2" class="data row13 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row14" class="row_heading level1 row14" >CM2</th>
+      <td id="T_bd2fb_row14_col0" class="data row14 col0" >0.332</td>
+      <td id="T_bd2fb_row14_col1" class="data row14 col1" >0.189</td>
+      <td id="T_bd2fb_row14_col2" class="data row14 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row15" class="row_heading level1 row15" >CM3</th>
+      <td id="T_bd2fb_row15_col0" class="data row15 col0" >0.198</td>
+      <td id="T_bd2fb_row15_col1" class="data row15 col1" >0.221</td>
+      <td id="T_bd2fb_row15_col2" class="data row15 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row16" class="row_heading level1 row16" >PT2</th>
+      <td id="T_bd2fb_row16_col0" class="data row16 col0" >0.542</td>
+      <td id="T_bd2fb_row16_col1" class="data row16 col1" >0.115</td>
+      <td id="T_bd2fb_row16_col2" class="data row16 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row17" class="row_heading level1 row17" >PT3</th>
+      <td id="T_bd2fb_row17_col0" class="data row17 col0" >0.637</td>
+      <td id="T_bd2fb_row17_col1" class="data row17 col1" >0.306</td>
+      <td id="T_bd2fb_row17_col2" class="data row17 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level0_row18" class="row_heading level0 row18" rowspan="6">AN3</th>
+      <th id="T_bd2fb_level1_row18" class="row_heading level1 row18" >AR2</th>
+      <td id="T_bd2fb_row18_col0" class="data row18 col0" >0.660</td>
+      <td id="T_bd2fb_row18_col1" class="data row18 col1" >0.451</td>
+      <td id="T_bd2fb_row18_col2" class="data row18 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row19" class="row_heading level1 row19" >AR3</th>
+      <td id="T_bd2fb_row19_col0" class="data row19 col0" >0.004</td>
+      <td id="T_bd2fb_row19_col1" class="data row19 col1" >0.108</td>
+      <td id="T_bd2fb_row19_col2" class="data row19 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row20" class="row_heading level1 row20" >CM2</th>
+      <td id="T_bd2fb_row20_col0" class="data row20 col0" >0.132</td>
+      <td id="T_bd2fb_row20_col1" class="data row20 col1" >0.478</td>
+      <td id="T_bd2fb_row20_col2" class="data row20 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row21" class="row_heading level1 row21" >CM3</th>
+      <td id="T_bd2fb_row21_col0" class="data row21 col0" >0.021</td>
+      <td id="T_bd2fb_row21_col1" class="data row21 col1" >0.327</td>
+      <td id="T_bd2fb_row21_col2" class="data row21 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row22" class="row_heading level1 row22" >PT2</th>
+      <td id="T_bd2fb_row22_col0" class="data row22 col0" >0.320</td>
+      <td id="T_bd2fb_row22_col1" class="data row22 col1" >0.040</td>
+      <td id="T_bd2fb_row22_col2" class="data row22 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row23" class="row_heading level1 row23" >PT3</th>
+      <td id="T_bd2fb_row23_col0" class="data row23 col0" >0.649</td>
+      <td id="T_bd2fb_row23_col1" class="data row23 col1" >0.248</td>
+      <td id="T_bd2fb_row23_col2" class="data row23 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level0_row24" class="row_heading level0 row24" rowspan="6">AN4</th>
+      <th id="T_bd2fb_level1_row24" class="row_heading level1 row24" >AR2</th>
+      <td id="T_bd2fb_row24_col0" class="data row24 col0" >0.293</td>
+      <td id="T_bd2fb_row24_col1" class="data row24 col1" >0.060</td>
+      <td id="T_bd2fb_row24_col2" class="data row24 col2" >2.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row25" class="row_heading level1 row25" >AR3</th>
+      <td id="T_bd2fb_row25_col0" class="data row25 col0" >0.068</td>
+      <td id="T_bd2fb_row25_col1" class="data row25 col1" >0.001</td>
+      <td id="T_bd2fb_row25_col2" class="data row25 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row26" class="row_heading level1 row26" >CM2</th>
+      <td id="T_bd2fb_row26_col0" class="data row26 col0" >0.044</td>
+      <td id="T_bd2fb_row26_col1" class="data row26 col1" >0.002</td>
+      <td id="T_bd2fb_row26_col2" class="data row26 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row27" class="row_heading level1 row27" >CM3</th>
+      <td id="T_bd2fb_row27_col0" class="data row27 col0" >0.008</td>
+      <td id="T_bd2fb_row27_col1" class="data row27 col1" >0.002</td>
+      <td id="T_bd2fb_row27_col2" class="data row27 col2" >0.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row28" class="row_heading level1 row28" >PT2</th>
+      <td id="T_bd2fb_row28_col0" class="data row28 col0" >0.127</td>
+      <td id="T_bd2fb_row28_col1" class="data row28 col1" >0.026</td>
+      <td id="T_bd2fb_row28_col2" class="data row28 col2" >1.000</td>
+    </tr>
+    <tr>
+      <th id="T_bd2fb_level1_row29" class="row_heading level1 row29" >PT3</th>
+      <td id="T_bd2fb_row29_col0" class="data row29 col0" >0.695</td>
+      <td id="T_bd2fb_row29_col1" class="data row29 col1" >0.098</td>
+      <td id="T_bd2fb_row29_col2" class="data row29 col2" >2.000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="combine-results">
+<h4>Combine Results<a class="headerlink" href="#combine-results" title="Permalink to this headline">#</a></h4>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_vals_all</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">p_vals_dr</span><span class="p">,</span> <span class="n">p_vals_f</span><span class="p">,</span> <span class="n">p_vals_r</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">{</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">p_vals_all</span><span class="o">.</span><span class="n">index</span><span class="p">}:</span>
+    
+    <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;#R&#39;</span><span class="p">,</span> <span class="s1">&#39;F1&#39;</span><span class="p">,</span> <span class="s1">&#39;PR2&#39;</span><span class="p">]:</span>
+        
+        <span class="n">count_t</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">count_t</span> <span class="o">=</span> <span class="n">p_vals_all</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">t</span><span class="p">),(</span><span class="n">m</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+        <span class="n">p_vals_all</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">t</span><span class="p">,</span> <span class="s1">&#39;xAll&#39;</span><span class="p">),</span> <span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s1">&#39;Count&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">count_t</span>
+        
+<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="p">{</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">p_vals_all</span><span class="o">.</span><span class="n">index</span><span class="p">}:</span>
+    
+    <span class="n">count_t</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">count_t</span> <span class="o">=</span> <span class="n">p_vals_all</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="n">i</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">p_vals_all</span><span class="o">.</span><span class="n">index</span> <span class="k">if</span> <span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">t</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">i</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;xAll&#39;</span><span class="p">)],</span>
+                             <span class="p">(</span><span class="nb">slice</span><span class="p">(</span><span class="kc">None</span><span class="p">),</span> <span class="s1">&#39;Count&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+    
+    <span class="n">p_vals_all</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">t</span><span class="p">,</span> <span class="s1">&#39;xAll&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;Count&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">count_t</span>
+    
+<span class="n">p_vals_all</span> <span class="o">=</span> <span class="n">p_vals_all</span><span class="o">.</span><span class="n">sort_index</span><span class="p">()</span>
+<span class="n">p_vals_all</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">set_levels</span><span class="p">([</span><span class="n">p_vals_all</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> 
+                       <span class="n">p_vals_all</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">get_level_values</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;xAll&#39;</span><span class="p">,</span> <span class="s1">&#39;All&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">unique</span><span class="p">()],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">p_vals_all_styled</span> <span class="o">=</span> <span class="n">p_vals_all</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">set_table_styles</span><span class="p">(</span><span class="n">styles</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.2f}</span><span class="s1">&#39;</span><span class="p">)</span>\
+    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.0f}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">p_vals_all</span><span class="o">.</span><span class="n">columns</span> 
+                              <span class="k">if</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Count&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Count&#39;</span><span class="p">)])</span>\
+    <span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;background:goldenrod&quot;</span> <span class="k">if</span> <span class="n">v</span> <span class="o">&gt;=</span><span class="mf">0.05</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">x</span><span class="p">],</span> 
+           <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">p_vals_all</span><span class="o">.</span><span class="n">columns</span> <span class="k">if</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Count&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;Count&#39;</span><span class="p">)])</span>
+
+<span class="n">p_vals_all_styled</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_html"><style type="text/css">
+#T_2cc19 th {
+  font-size: 11pt;
+  text-align: center;
+  font-family: Calibri;
+  background-color: white;
+  border-style: solid;
+  border-color: grey;
+  border-width: thin;
+}
+#T_2cc19 td {
+  font-size: 11pt;
+  font-family: Calibri;
+  border-style: solid;
+  border-color: grey;
+  border-width: thin;
+}
+#T_2cc19 caption {
+  caption-side: bottom;
+}
+#T_2cc19_row0_col1, #T_2cc19_row1_col3, #T_2cc19_row2_col1, #T_2cc19_row4_col0, #T_2cc19_row4_col3, #T_2cc19_row4_col4, #T_2cc19_row5_col1, #T_2cc19_row5_col3, #T_2cc19_row7_col1, #T_2cc19_row7_col3, #T_2cc19_row8_col3, #T_2cc19_row9_col1, #T_2cc19_row9_col3, #T_2cc19_row10_col3, #T_2cc19_row11_col0, #T_2cc19_row11_col1, #T_2cc19_row11_col3, #T_2cc19_row11_col4, #T_2cc19_row12_col0, #T_2cc19_row12_col1, #T_2cc19_row12_col3, #T_2cc19_row12_col4, #T_2cc19_row12_col6, #T_2cc19_row14_col1, #T_2cc19_row14_col3, #T_2cc19_row14_col4, #T_2cc19_row14_col6, #T_2cc19_row15_col4, #T_2cc19_row16_col1, #T_2cc19_row16_col3, #T_2cc19_row16_col4, #T_2cc19_row17_col3, #T_2cc19_row17_col4, #T_2cc19_row18_col0, #T_2cc19_row18_col1, #T_2cc19_row18_col3, #T_2cc19_row18_col4, #T_2cc19_row18_col6, #T_2cc19_row19_col0, #T_2cc19_row19_col1, #T_2cc19_row19_col3, #T_2cc19_row19_col4, #T_2cc19_row19_col6, #T_2cc19_row21_col1, #T_2cc19_row21_col3, #T_2cc19_row21_col4, #T_2cc19_row21_col7, #T_2cc19_row22_col0, #T_2cc19_row22_col1, #T_2cc19_row22_col4, #T_2cc19_row22_col7, #T_2cc19_row23_col1, #T_2cc19_row23_col3, #T_2cc19_row23_col4, #T_2cc19_row23_col7, #T_2cc19_row24_col1, #T_2cc19_row24_col4, #T_2cc19_row24_col6, #T_2cc19_row24_col7, #T_2cc19_row25_col0, #T_2cc19_row25_col1, #T_2cc19_row25_col3, #T_2cc19_row25_col6, #T_2cc19_row26_col0, #T_2cc19_row26_col1, #T_2cc19_row26_col3, #T_2cc19_row26_col4, #T_2cc19_row26_col6, #T_2cc19_row26_col7, #T_2cc19_row28_col1, #T_2cc19_row28_col3, #T_2cc19_row28_col4, #T_2cc19_row29_col1, #T_2cc19_row29_col3, #T_2cc19_row30_col0, #T_2cc19_row30_col1, #T_2cc19_row31_col0, #T_2cc19_row31_col1, #T_2cc19_row32_col1, #T_2cc19_row32_col3, #T_2cc19_row32_col7, #T_2cc19_row33_col1, #T_2cc19_row33_col3, #T_2cc19_row33_col4, #T_2cc19_row33_col7 {
+  background: goldenrod;
+}
+</style>
+<table id="T_2cc19">
+  <thead>
+    <tr>
+      <th class="blank" >&nbsp;</th>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_2cc19_level0_col0" class="col_heading level0 col0" colspan="3">PR2</th>
+      <th id="T_2cc19_level0_col3" class="col_heading level0 col3" colspan="3">F1</th>
+      <th id="T_2cc19_level0_col6" class="col_heading level0 col6" colspan="3">#R</th>
+      <th id="T_2cc19_level0_col9" class="col_heading level0 col9" >Count</th>
+    </tr>
+    <tr>
+      <th class="blank" >&nbsp;</th>
+      <th class="index_name level1" >ST</th>
+      <th id="T_2cc19_level1_col0" class="col_heading level1 col0" >D</th>
+      <th id="T_2cc19_level1_col1" class="col_heading level1 col1" >G</th>
+      <th id="T_2cc19_level1_col2" class="col_heading level1 col2" >Count</th>
+      <th id="T_2cc19_level1_col3" class="col_heading level1 col3" >D</th>
+      <th id="T_2cc19_level1_col4" class="col_heading level1 col4" >G</th>
+      <th id="T_2cc19_level1_col5" class="col_heading level1 col5" >Count</th>
+      <th id="T_2cc19_level1_col6" class="col_heading level1 col6" >D</th>
+      <th id="T_2cc19_level1_col7" class="col_heading level1 col7" >G</th>
+      <th id="T_2cc19_level1_col8" class="col_heading level1 col8" >Count</th>
+      <th id="T_2cc19_level1_col9" class="col_heading level1 col9" ></th>
+    </tr>
+    <tr>
+      <th class="index_name level0" >T</th>
+      <th class="index_name level1" >PS</th>
+      <th class="blank col0" >&nbsp;</th>
+      <th class="blank col1" >&nbsp;</th>
+      <th class="blank col2" >&nbsp;</th>
+      <th class="blank col3" >&nbsp;</th>
+      <th class="blank col4" >&nbsp;</th>
+      <th class="blank col5" >&nbsp;</th>
+      <th class="blank col6" >&nbsp;</th>
+      <th class="blank col7" >&nbsp;</th>
+      <th class="blank col8" >&nbsp;</th>
+      <th class="blank col9" >&nbsp;</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_2cc19_level0_row0" class="row_heading level0 row0" rowspan="7">AN</th>
+      <th id="T_2cc19_level1_row0" class="row_heading level1 row0" >AR2</th>
+      <td id="T_2cc19_row0_col0" class="data row0 col0" >0.00</td>
+      <td id="T_2cc19_row0_col1" class="data row0 col1" >0.87</td>
+      <td id="T_2cc19_row0_col2" class="data row0 col2" >1</td>
+      <td id="T_2cc19_row0_col3" class="data row0 col3" >0.05</td>
+      <td id="T_2cc19_row0_col4" class="data row0 col4" >0.00</td>
+      <td id="T_2cc19_row0_col5" class="data row0 col5" >0</td>
+      <td id="T_2cc19_row0_col6" class="data row0 col6" >0.00</td>
+      <td id="T_2cc19_row0_col7" class="data row0 col7" >0.00</td>
+      <td id="T_2cc19_row0_col8" class="data row0 col8" >0</td>
+      <td id="T_2cc19_row0_col9" class="data row0 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row1" class="row_heading level1 row1" >AR3</th>
+      <td id="T_2cc19_row1_col0" class="data row1 col0" >0.00</td>
+      <td id="T_2cc19_row1_col1" class="data row1 col1" >0.01</td>
+      <td id="T_2cc19_row1_col2" class="data row1 col2" >0</td>
+      <td id="T_2cc19_row1_col3" class="data row1 col3" >0.07</td>
+      <td id="T_2cc19_row1_col4" class="data row1 col4" >0.00</td>
+      <td id="T_2cc19_row1_col5" class="data row1 col5" >1</td>
+      <td id="T_2cc19_row1_col6" class="data row1 col6" >0.00</td>
+      <td id="T_2cc19_row1_col7" class="data row1 col7" >0.00</td>
+      <td id="T_2cc19_row1_col8" class="data row1 col8" >0</td>
+      <td id="T_2cc19_row1_col9" class="data row1 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row2" class="row_heading level1 row2" >CM2</th>
+      <td id="T_2cc19_row2_col0" class="data row2 col0" >0.00</td>
+      <td id="T_2cc19_row2_col1" class="data row2 col1" >0.08</td>
+      <td id="T_2cc19_row2_col2" class="data row2 col2" >1</td>
+      <td id="T_2cc19_row2_col3" class="data row2 col3" >0.00</td>
+      <td id="T_2cc19_row2_col4" class="data row2 col4" >0.00</td>
+      <td id="T_2cc19_row2_col5" class="data row2 col5" >0</td>
+      <td id="T_2cc19_row2_col6" class="data row2 col6" >0.00</td>
+      <td id="T_2cc19_row2_col7" class="data row2 col7" >0.00</td>
+      <td id="T_2cc19_row2_col8" class="data row2 col8" >0</td>
+      <td id="T_2cc19_row2_col9" class="data row2 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row3" class="row_heading level1 row3" >CM3</th>
+      <td id="T_2cc19_row3_col0" class="data row3 col0" >0.00</td>
+      <td id="T_2cc19_row3_col1" class="data row3 col1" >0.00</td>
+      <td id="T_2cc19_row3_col2" class="data row3 col2" >0</td>
+      <td id="T_2cc19_row3_col3" class="data row3 col3" >0.00</td>
+      <td id="T_2cc19_row3_col4" class="data row3 col4" >0.00</td>
+      <td id="T_2cc19_row3_col5" class="data row3 col5" >0</td>
+      <td id="T_2cc19_row3_col6" class="data row3 col6" >0.00</td>
+      <td id="T_2cc19_row3_col7" class="data row3 col7" >0.00</td>
+      <td id="T_2cc19_row3_col8" class="data row3 col8" >0</td>
+      <td id="T_2cc19_row3_col9" class="data row3 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row4" class="row_heading level1 row4" >PT2</th>
+      <td id="T_2cc19_row4_col0" class="data row4 col0" >0.13</td>
+      <td id="T_2cc19_row4_col1" class="data row4 col1" >0.01</td>
+      <td id="T_2cc19_row4_col2" class="data row4 col2" >1</td>
+      <td id="T_2cc19_row4_col3" class="data row4 col3" >0.47</td>
+      <td id="T_2cc19_row4_col4" class="data row4 col4" >0.26</td>
+      <td id="T_2cc19_row4_col5" class="data row4 col5" >2</td>
+      <td id="T_2cc19_row4_col6" class="data row4 col6" >0.00</td>
+      <td id="T_2cc19_row4_col7" class="data row4 col7" >0.00</td>
+      <td id="T_2cc19_row4_col8" class="data row4 col8" >0</td>
+      <td id="T_2cc19_row4_col9" class="data row4 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row5" class="row_heading level1 row5" >PT3</th>
+      <td id="T_2cc19_row5_col0" class="data row5 col0" >0.02</td>
+      <td id="T_2cc19_row5_col1" class="data row5 col1" >0.12</td>
+      <td id="T_2cc19_row5_col2" class="data row5 col2" >1</td>
+      <td id="T_2cc19_row5_col3" class="data row5 col3" >0.06</td>
+      <td id="T_2cc19_row5_col4" class="data row5 col4" >0.03</td>
+      <td id="T_2cc19_row5_col5" class="data row5 col5" >1</td>
+      <td id="T_2cc19_row5_col6" class="data row5 col6" >0.00</td>
+      <td id="T_2cc19_row5_col7" class="data row5 col7" >0.00</td>
+      <td id="T_2cc19_row5_col8" class="data row5 col8" >0</td>
+      <td id="T_2cc19_row5_col9" class="data row5 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row6" class="row_heading level1 row6" >All</th>
+      <td id="T_2cc19_row6_col0" class="data row6 col0" >nan</td>
+      <td id="T_2cc19_row6_col1" class="data row6 col1" >nan</td>
+      <td id="T_2cc19_row6_col2" class="data row6 col2" >4</td>
+      <td id="T_2cc19_row6_col3" class="data row6 col3" >nan</td>
+      <td id="T_2cc19_row6_col4" class="data row6 col4" >nan</td>
+      <td id="T_2cc19_row6_col5" class="data row6 col5" >4</td>
+      <td id="T_2cc19_row6_col6" class="data row6 col6" >nan</td>
+      <td id="T_2cc19_row6_col7" class="data row6 col7" >nan</td>
+      <td id="T_2cc19_row6_col8" class="data row6 col8" >0</td>
+      <td id="T_2cc19_row6_col9" class="data row6 col9" >8</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level0_row7" class="row_heading level0 row7" rowspan="7">AN1</th>
+      <th id="T_2cc19_level1_row7" class="row_heading level1 row7" >AR2</th>
+      <td id="T_2cc19_row7_col0" class="data row7 col0" >0.00</td>
+      <td id="T_2cc19_row7_col1" class="data row7 col1" >0.87</td>
+      <td id="T_2cc19_row7_col2" class="data row7 col2" >1</td>
+      <td id="T_2cc19_row7_col3" class="data row7 col3" >0.58</td>
+      <td id="T_2cc19_row7_col4" class="data row7 col4" >0.00</td>
+      <td id="T_2cc19_row7_col5" class="data row7 col5" >1</td>
+      <td id="T_2cc19_row7_col6" class="data row7 col6" >0.00</td>
+      <td id="T_2cc19_row7_col7" class="data row7 col7" >0.00</td>
+      <td id="T_2cc19_row7_col8" class="data row7 col8" >0</td>
+      <td id="T_2cc19_row7_col9" class="data row7 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row8" class="row_heading level1 row8" >AR3</th>
+      <td id="T_2cc19_row8_col0" class="data row8 col0" >0.00</td>
+      <td id="T_2cc19_row8_col1" class="data row8 col1" >0.04</td>
+      <td id="T_2cc19_row8_col2" class="data row8 col2" >0</td>
+      <td id="T_2cc19_row8_col3" class="data row8 col3" >0.82</td>
+      <td id="T_2cc19_row8_col4" class="data row8 col4" >0.00</td>
+      <td id="T_2cc19_row8_col5" class="data row8 col5" >1</td>
+      <td id="T_2cc19_row8_col6" class="data row8 col6" >0.00</td>
+      <td id="T_2cc19_row8_col7" class="data row8 col7" >0.00</td>
+      <td id="T_2cc19_row8_col8" class="data row8 col8" >0</td>
+      <td id="T_2cc19_row8_col9" class="data row8 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row9" class="row_heading level1 row9" >CM2</th>
+      <td id="T_2cc19_row9_col0" class="data row9 col0" >0.00</td>
+      <td id="T_2cc19_row9_col1" class="data row9 col1" >0.08</td>
+      <td id="T_2cc19_row9_col2" class="data row9 col2" >1</td>
+      <td id="T_2cc19_row9_col3" class="data row9 col3" >0.20</td>
+      <td id="T_2cc19_row9_col4" class="data row9 col4" >0.00</td>
+      <td id="T_2cc19_row9_col5" class="data row9 col5" >1</td>
+      <td id="T_2cc19_row9_col6" class="data row9 col6" >0.00</td>
+      <td id="T_2cc19_row9_col7" class="data row9 col7" >0.00</td>
+      <td id="T_2cc19_row9_col8" class="data row9 col8" >0</td>
+      <td id="T_2cc19_row9_col9" class="data row9 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row10" class="row_heading level1 row10" >CM3</th>
+      <td id="T_2cc19_row10_col0" class="data row10 col0" >0.00</td>
+      <td id="T_2cc19_row10_col1" class="data row10 col1" >0.01</td>
+      <td id="T_2cc19_row10_col2" class="data row10 col2" >0</td>
+      <td id="T_2cc19_row10_col3" class="data row10 col3" >0.79</td>
+      <td id="T_2cc19_row10_col4" class="data row10 col4" >0.01</td>
+      <td id="T_2cc19_row10_col5" class="data row10 col5" >1</td>
+      <td id="T_2cc19_row10_col6" class="data row10 col6" >0.00</td>
+      <td id="T_2cc19_row10_col7" class="data row10 col7" >0.00</td>
+      <td id="T_2cc19_row10_col8" class="data row10 col8" >0</td>
+      <td id="T_2cc19_row10_col9" class="data row10 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row11" class="row_heading level1 row11" >PT2</th>
+      <td id="T_2cc19_row11_col0" class="data row11 col0" >0.59</td>
+      <td id="T_2cc19_row11_col1" class="data row11 col1" >0.07</td>
+      <td id="T_2cc19_row11_col2" class="data row11 col2" >2</td>
+      <td id="T_2cc19_row11_col3" class="data row11 col3" >0.50</td>
+      <td id="T_2cc19_row11_col4" class="data row11 col4" >0.60</td>
+      <td id="T_2cc19_row11_col5" class="data row11 col5" >2</td>
+      <td id="T_2cc19_row11_col6" class="data row11 col6" >0.00</td>
+      <td id="T_2cc19_row11_col7" class="data row11 col7" >0.00</td>
+      <td id="T_2cc19_row11_col8" class="data row11 col8" >0</td>
+      <td id="T_2cc19_row11_col9" class="data row11 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row12" class="row_heading level1 row12" >PT3</th>
+      <td id="T_2cc19_row12_col0" class="data row12 col0" >0.72</td>
+      <td id="T_2cc19_row12_col1" class="data row12 col1" >0.12</td>
+      <td id="T_2cc19_row12_col2" class="data row12 col2" >2</td>
+      <td id="T_2cc19_row12_col3" class="data row12 col3" >0.38</td>
+      <td id="T_2cc19_row12_col4" class="data row12 col4" >0.16</td>
+      <td id="T_2cc19_row12_col5" class="data row12 col5" >2</td>
+      <td id="T_2cc19_row12_col6" class="data row12 col6" >0.07</td>
+      <td id="T_2cc19_row12_col7" class="data row12 col7" >0.00</td>
+      <td id="T_2cc19_row12_col8" class="data row12 col8" >1</td>
+      <td id="T_2cc19_row12_col9" class="data row12 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row13" class="row_heading level1 row13" >All</th>
+      <td id="T_2cc19_row13_col0" class="data row13 col0" >nan</td>
+      <td id="T_2cc19_row13_col1" class="data row13 col1" >nan</td>
+      <td id="T_2cc19_row13_col2" class="data row13 col2" >6</td>
+      <td id="T_2cc19_row13_col3" class="data row13 col3" >nan</td>
+      <td id="T_2cc19_row13_col4" class="data row13 col4" >nan</td>
+      <td id="T_2cc19_row13_col5" class="data row13 col5" >8</td>
+      <td id="T_2cc19_row13_col6" class="data row13 col6" >nan</td>
+      <td id="T_2cc19_row13_col7" class="data row13 col7" >nan</td>
+      <td id="T_2cc19_row13_col8" class="data row13 col8" >1</td>
+      <td id="T_2cc19_row13_col9" class="data row13 col9" >15</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level0_row14" class="row_heading level0 row14" rowspan="7">AN2</th>
+      <th id="T_2cc19_level1_row14" class="row_heading level1 row14" >AR2</th>
+      <td id="T_2cc19_row14_col0" class="data row14 col0" >0.00</td>
+      <td id="T_2cc19_row14_col1" class="data row14 col1" >0.35</td>
+      <td id="T_2cc19_row14_col2" class="data row14 col2" >1</td>
+      <td id="T_2cc19_row14_col3" class="data row14 col3" >0.81</td>
+      <td id="T_2cc19_row14_col4" class="data row14 col4" >0.08</td>
+      <td id="T_2cc19_row14_col5" class="data row14 col5" >2</td>
+      <td id="T_2cc19_row14_col6" class="data row14 col6" >0.91</td>
+      <td id="T_2cc19_row14_col7" class="data row14 col7" >0.01</td>
+      <td id="T_2cc19_row14_col8" class="data row14 col8" >1</td>
+      <td id="T_2cc19_row14_col9" class="data row14 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row15" class="row_heading level1 row15" >AR3</th>
+      <td id="T_2cc19_row15_col0" class="data row15 col0" >0.00</td>
+      <td id="T_2cc19_row15_col1" class="data row15 col1" >0.04</td>
+      <td id="T_2cc19_row15_col2" class="data row15 col2" >0</td>
+      <td id="T_2cc19_row15_col3" class="data row15 col3" >0.01</td>
+      <td id="T_2cc19_row15_col4" class="data row15 col4" >0.29</td>
+      <td id="T_2cc19_row15_col5" class="data row15 col5" >1</td>
+      <td id="T_2cc19_row15_col6" class="data row15 col6" >0.01</td>
+      <td id="T_2cc19_row15_col7" class="data row15 col7" >0.00</td>
+      <td id="T_2cc19_row15_col8" class="data row15 col8" >0</td>
+      <td id="T_2cc19_row15_col9" class="data row15 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row16" class="row_heading level1 row16" >CM2</th>
+      <td id="T_2cc19_row16_col0" class="data row16 col0" >0.00</td>
+      <td id="T_2cc19_row16_col1" class="data row16 col1" >0.14</td>
+      <td id="T_2cc19_row16_col2" class="data row16 col2" >1</td>
+      <td id="T_2cc19_row16_col3" class="data row16 col3" >0.33</td>
+      <td id="T_2cc19_row16_col4" class="data row16 col4" >0.19</td>
+      <td id="T_2cc19_row16_col5" class="data row16 col5" >2</td>
+      <td id="T_2cc19_row16_col6" class="data row16 col6" >0.00</td>
+      <td id="T_2cc19_row16_col7" class="data row16 col7" >0.02</td>
+      <td id="T_2cc19_row16_col8" class="data row16 col8" >0</td>
+      <td id="T_2cc19_row16_col9" class="data row16 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row17" class="row_heading level1 row17" >CM3</th>
+      <td id="T_2cc19_row17_col0" class="data row17 col0" >0.00</td>
+      <td id="T_2cc19_row17_col1" class="data row17 col1" >0.03</td>
+      <td id="T_2cc19_row17_col2" class="data row17 col2" >0</td>
+      <td id="T_2cc19_row17_col3" class="data row17 col3" >0.20</td>
+      <td id="T_2cc19_row17_col4" class="data row17 col4" >0.22</td>
+      <td id="T_2cc19_row17_col5" class="data row17 col5" >2</td>
+      <td id="T_2cc19_row17_col6" class="data row17 col6" >0.00</td>
+      <td id="T_2cc19_row17_col7" class="data row17 col7" >0.00</td>
+      <td id="T_2cc19_row17_col8" class="data row17 col8" >0</td>
+      <td id="T_2cc19_row17_col9" class="data row17 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row18" class="row_heading level1 row18" >PT2</th>
+      <td id="T_2cc19_row18_col0" class="data row18 col0" >0.60</td>
+      <td id="T_2cc19_row18_col1" class="data row18 col1" >0.07</td>
+      <td id="T_2cc19_row18_col2" class="data row18 col2" >2</td>
+      <td id="T_2cc19_row18_col3" class="data row18 col3" >0.54</td>
+      <td id="T_2cc19_row18_col4" class="data row18 col4" >0.12</td>
+      <td id="T_2cc19_row18_col5" class="data row18 col5" >2</td>
+      <td id="T_2cc19_row18_col6" class="data row18 col6" >0.14</td>
+      <td id="T_2cc19_row18_col7" class="data row18 col7" >0.00</td>
+      <td id="T_2cc19_row18_col8" class="data row18 col8" >1</td>
+      <td id="T_2cc19_row18_col9" class="data row18 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row19" class="row_heading level1 row19" >PT3</th>
+      <td id="T_2cc19_row19_col0" class="data row19 col0" >0.94</td>
+      <td id="T_2cc19_row19_col1" class="data row19 col1" >0.26</td>
+      <td id="T_2cc19_row19_col2" class="data row19 col2" >2</td>
+      <td id="T_2cc19_row19_col3" class="data row19 col3" >0.64</td>
+      <td id="T_2cc19_row19_col4" class="data row19 col4" >0.31</td>
+      <td id="T_2cc19_row19_col5" class="data row19 col5" >2</td>
+      <td id="T_2cc19_row19_col6" class="data row19 col6" >0.51</td>
+      <td id="T_2cc19_row19_col7" class="data row19 col7" >0.02</td>
+      <td id="T_2cc19_row19_col8" class="data row19 col8" >1</td>
+      <td id="T_2cc19_row19_col9" class="data row19 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row20" class="row_heading level1 row20" >All</th>
+      <td id="T_2cc19_row20_col0" class="data row20 col0" >nan</td>
+      <td id="T_2cc19_row20_col1" class="data row20 col1" >nan</td>
+      <td id="T_2cc19_row20_col2" class="data row20 col2" >6</td>
+      <td id="T_2cc19_row20_col3" class="data row20 col3" >nan</td>
+      <td id="T_2cc19_row20_col4" class="data row20 col4" >nan</td>
+      <td id="T_2cc19_row20_col5" class="data row20 col5" >11</td>
+      <td id="T_2cc19_row20_col6" class="data row20 col6" >nan</td>
+      <td id="T_2cc19_row20_col7" class="data row20 col7" >nan</td>
+      <td id="T_2cc19_row20_col8" class="data row20 col8" >3</td>
+      <td id="T_2cc19_row20_col9" class="data row20 col9" >20</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level0_row21" class="row_heading level0 row21" rowspan="7">AN3</th>
+      <th id="T_2cc19_level1_row21" class="row_heading level1 row21" >AR2</th>
+      <td id="T_2cc19_row21_col0" class="data row21 col0" >0.00</td>
+      <td id="T_2cc19_row21_col1" class="data row21 col1" >0.24</td>
+      <td id="T_2cc19_row21_col2" class="data row21 col2" >1</td>
+      <td id="T_2cc19_row21_col3" class="data row21 col3" >0.66</td>
+      <td id="T_2cc19_row21_col4" class="data row21 col4" >0.45</td>
+      <td id="T_2cc19_row21_col5" class="data row21 col5" >2</td>
+      <td id="T_2cc19_row21_col6" class="data row21 col6" >0.02</td>
+      <td id="T_2cc19_row21_col7" class="data row21 col7" >0.83</td>
+      <td id="T_2cc19_row21_col8" class="data row21 col8" >1</td>
+      <td id="T_2cc19_row21_col9" class="data row21 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row22" class="row_heading level1 row22" >AR3</th>
+      <td id="T_2cc19_row22_col0" class="data row22 col0" >0.33</td>
+      <td id="T_2cc19_row22_col1" class="data row22 col1" >0.25</td>
+      <td id="T_2cc19_row22_col2" class="data row22 col2" >2</td>
+      <td id="T_2cc19_row22_col3" class="data row22 col3" >0.00</td>
+      <td id="T_2cc19_row22_col4" class="data row22 col4" >0.11</td>
+      <td id="T_2cc19_row22_col5" class="data row22 col5" >1</td>
+      <td id="T_2cc19_row22_col6" class="data row22 col6" >0.00</td>
+      <td id="T_2cc19_row22_col7" class="data row22 col7" >0.51</td>
+      <td id="T_2cc19_row22_col8" class="data row22 col8" >1</td>
+      <td id="T_2cc19_row22_col9" class="data row22 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row23" class="row_heading level1 row23" >CM2</th>
+      <td id="T_2cc19_row23_col0" class="data row23 col0" >0.03</td>
+      <td id="T_2cc19_row23_col1" class="data row23 col1" >0.11</td>
+      <td id="T_2cc19_row23_col2" class="data row23 col2" >1</td>
+      <td id="T_2cc19_row23_col3" class="data row23 col3" >0.13</td>
+      <td id="T_2cc19_row23_col4" class="data row23 col4" >0.48</td>
+      <td id="T_2cc19_row23_col5" class="data row23 col5" >2</td>
+      <td id="T_2cc19_row23_col6" class="data row23 col6" >0.01</td>
+      <td id="T_2cc19_row23_col7" class="data row23 col7" >0.30</td>
+      <td id="T_2cc19_row23_col8" class="data row23 col8" >1</td>
+      <td id="T_2cc19_row23_col9" class="data row23 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row24" class="row_heading level1 row24" >CM3</th>
+      <td id="T_2cc19_row24_col0" class="data row24 col0" >0.00</td>
+      <td id="T_2cc19_row24_col1" class="data row24 col1" >0.06</td>
+      <td id="T_2cc19_row24_col2" class="data row24 col2" >1</td>
+      <td id="T_2cc19_row24_col3" class="data row24 col3" >0.02</td>
+      <td id="T_2cc19_row24_col4" class="data row24 col4" >0.33</td>
+      <td id="T_2cc19_row24_col5" class="data row24 col5" >1</td>
+      <td id="T_2cc19_row24_col6" class="data row24 col6" >0.60</td>
+      <td id="T_2cc19_row24_col7" class="data row24 col7" >0.84</td>
+      <td id="T_2cc19_row24_col8" class="data row24 col8" >2</td>
+      <td id="T_2cc19_row24_col9" class="data row24 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row25" class="row_heading level1 row25" >PT2</th>
+      <td id="T_2cc19_row25_col0" class="data row25 col0" >0.17</td>
+      <td id="T_2cc19_row25_col1" class="data row25 col1" >0.13</td>
+      <td id="T_2cc19_row25_col2" class="data row25 col2" >2</td>
+      <td id="T_2cc19_row25_col3" class="data row25 col3" >0.32</td>
+      <td id="T_2cc19_row25_col4" class="data row25 col4" >0.04</td>
+      <td id="T_2cc19_row25_col5" class="data row25 col5" >1</td>
+      <td id="T_2cc19_row25_col6" class="data row25 col6" >0.11</td>
+      <td id="T_2cc19_row25_col7" class="data row25 col7" >0.01</td>
+      <td id="T_2cc19_row25_col8" class="data row25 col8" >1</td>
+      <td id="T_2cc19_row25_col9" class="data row25 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row26" class="row_heading level1 row26" >PT3</th>
+      <td id="T_2cc19_row26_col0" class="data row26 col0" >0.39</td>
+      <td id="T_2cc19_row26_col1" class="data row26 col1" >0.48</td>
+      <td id="T_2cc19_row26_col2" class="data row26 col2" >2</td>
+      <td id="T_2cc19_row26_col3" class="data row26 col3" >0.65</td>
+      <td id="T_2cc19_row26_col4" class="data row26 col4" >0.25</td>
+      <td id="T_2cc19_row26_col5" class="data row26 col5" >2</td>
+      <td id="T_2cc19_row26_col6" class="data row26 col6" >0.38</td>
+      <td id="T_2cc19_row26_col7" class="data row26 col7" >0.82</td>
+      <td id="T_2cc19_row26_col8" class="data row26 col8" >2</td>
+      <td id="T_2cc19_row26_col9" class="data row26 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row27" class="row_heading level1 row27" >All</th>
+      <td id="T_2cc19_row27_col0" class="data row27 col0" >nan</td>
+      <td id="T_2cc19_row27_col1" class="data row27 col1" >nan</td>
+      <td id="T_2cc19_row27_col2" class="data row27 col2" >9</td>
+      <td id="T_2cc19_row27_col3" class="data row27 col3" >nan</td>
+      <td id="T_2cc19_row27_col4" class="data row27 col4" >nan</td>
+      <td id="T_2cc19_row27_col5" class="data row27 col5" >9</td>
+      <td id="T_2cc19_row27_col6" class="data row27 col6" >nan</td>
+      <td id="T_2cc19_row27_col7" class="data row27 col7" >nan</td>
+      <td id="T_2cc19_row27_col8" class="data row27 col8" >8</td>
+      <td id="T_2cc19_row27_col9" class="data row27 col9" >26</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level0_row28" class="row_heading level0 row28" rowspan="7">AN4</th>
+      <th id="T_2cc19_level1_row28" class="row_heading level1 row28" >AR2</th>
+      <td id="T_2cc19_row28_col0" class="data row28 col0" >0.03</td>
+      <td id="T_2cc19_row28_col1" class="data row28 col1" >0.22</td>
+      <td id="T_2cc19_row28_col2" class="data row28 col2" >1</td>
+      <td id="T_2cc19_row28_col3" class="data row28 col3" >0.29</td>
+      <td id="T_2cc19_row28_col4" class="data row28 col4" >0.06</td>
+      <td id="T_2cc19_row28_col5" class="data row28 col5" >2</td>
+      <td id="T_2cc19_row28_col6" class="data row28 col6" >0.00</td>
+      <td id="T_2cc19_row28_col7" class="data row28 col7" >0.00</td>
+      <td id="T_2cc19_row28_col8" class="data row28 col8" >0</td>
+      <td id="T_2cc19_row28_col9" class="data row28 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row29" class="row_heading level1 row29" >AR3</th>
+      <td id="T_2cc19_row29_col0" class="data row29 col0" >0.01</td>
+      <td id="T_2cc19_row29_col1" class="data row29 col1" >1.00</td>
+      <td id="T_2cc19_row29_col2" class="data row29 col2" >1</td>
+      <td id="T_2cc19_row29_col3" class="data row29 col3" >0.07</td>
+      <td id="T_2cc19_row29_col4" class="data row29 col4" >0.00</td>
+      <td id="T_2cc19_row29_col5" class="data row29 col5" >1</td>
+      <td id="T_2cc19_row29_col6" class="data row29 col6" >0.00</td>
+      <td id="T_2cc19_row29_col7" class="data row29 col7" >0.00</td>
+      <td id="T_2cc19_row29_col8" class="data row29 col8" >0</td>
+      <td id="T_2cc19_row29_col9" class="data row29 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row30" class="row_heading level1 row30" >CM2</th>
+      <td id="T_2cc19_row30_col0" class="data row30 col0" >0.81</td>
+      <td id="T_2cc19_row30_col1" class="data row30 col1" >0.60</td>
+      <td id="T_2cc19_row30_col2" class="data row30 col2" >2</td>
+      <td id="T_2cc19_row30_col3" class="data row30 col3" >0.04</td>
+      <td id="T_2cc19_row30_col4" class="data row30 col4" >0.00</td>
+      <td id="T_2cc19_row30_col5" class="data row30 col5" >0</td>
+      <td id="T_2cc19_row30_col6" class="data row30 col6" >0.00</td>
+      <td id="T_2cc19_row30_col7" class="data row30 col7" >0.00</td>
+      <td id="T_2cc19_row30_col8" class="data row30 col8" >0</td>
+      <td id="T_2cc19_row30_col9" class="data row30 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row31" class="row_heading level1 row31" >CM3</th>
+      <td id="T_2cc19_row31_col0" class="data row31 col0" >0.26</td>
+      <td id="T_2cc19_row31_col1" class="data row31 col1" >0.75</td>
+      <td id="T_2cc19_row31_col2" class="data row31 col2" >2</td>
+      <td id="T_2cc19_row31_col3" class="data row31 col3" >0.01</td>
+      <td id="T_2cc19_row31_col4" class="data row31 col4" >0.00</td>
+      <td id="T_2cc19_row31_col5" class="data row31 col5" >0</td>
+      <td id="T_2cc19_row31_col6" class="data row31 col6" >0.00</td>
+      <td id="T_2cc19_row31_col7" class="data row31 col7" >0.00</td>
+      <td id="T_2cc19_row31_col8" class="data row31 col8" >0</td>
+      <td id="T_2cc19_row31_col9" class="data row31 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row32" class="row_heading level1 row32" >PT2</th>
+      <td id="T_2cc19_row32_col0" class="data row32 col0" >0.04</td>
+      <td id="T_2cc19_row32_col1" class="data row32 col1" >0.50</td>
+      <td id="T_2cc19_row32_col2" class="data row32 col2" >1</td>
+      <td id="T_2cc19_row32_col3" class="data row32 col3" >0.13</td>
+      <td id="T_2cc19_row32_col4" class="data row32 col4" >0.03</td>
+      <td id="T_2cc19_row32_col5" class="data row32 col5" >1</td>
+      <td id="T_2cc19_row32_col6" class="data row32 col6" >0.00</td>
+      <td id="T_2cc19_row32_col7" class="data row32 col7" >0.94</td>
+      <td id="T_2cc19_row32_col8" class="data row32 col8" >1</td>
+      <td id="T_2cc19_row32_col9" class="data row32 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row33" class="row_heading level1 row33" >PT3</th>
+      <td id="T_2cc19_row33_col0" class="data row33 col0" >0.05</td>
+      <td id="T_2cc19_row33_col1" class="data row33 col1" >0.48</td>
+      <td id="T_2cc19_row33_col2" class="data row33 col2" >1</td>
+      <td id="T_2cc19_row33_col3" class="data row33 col3" >0.69</td>
+      <td id="T_2cc19_row33_col4" class="data row33 col4" >0.10</td>
+      <td id="T_2cc19_row33_col5" class="data row33 col5" >2</td>
+      <td id="T_2cc19_row33_col6" class="data row33 col6" >0.02</td>
+      <td id="T_2cc19_row33_col7" class="data row33 col7" >0.14</td>
+      <td id="T_2cc19_row33_col8" class="data row33 col8" >1</td>
+      <td id="T_2cc19_row33_col9" class="data row33 col9" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_2cc19_level1_row34" class="row_heading level1 row34" >All</th>
+      <td id="T_2cc19_row34_col0" class="data row34 col0" >nan</td>
+      <td id="T_2cc19_row34_col1" class="data row34 col1" >nan</td>
+      <td id="T_2cc19_row34_col2" class="data row34 col2" >8</td>
+      <td id="T_2cc19_row34_col3" class="data row34 col3" >nan</td>
+      <td id="T_2cc19_row34_col4" class="data row34 col4" >nan</td>
+      <td id="T_2cc19_row34_col5" class="data row34 col5" >6</td>
+      <td id="T_2cc19_row34_col6" class="data row34 col6" >nan</td>
+      <td id="T_2cc19_row34_col7" class="data row34 col7" >nan</td>
+      <td id="T_2cc19_row34_col8" class="data row34 col8" >2</td>
+      <td id="T_2cc19_row34_col9" class="data row34 col9" >16</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "jedm"
+        },
+        kernelOptions: {
+            name: "jedm",
+            path: "./nb"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'jedm'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="jedm_4_recommendations.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Recommendations</p>
+      </div>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropout-prediction-data">Dropout Prediction Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#recommendations-data">Recommendations Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#def-test-stat-sign">def test_stat_sign()</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dropout-pred">Dropout Pred</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#normality">Normality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#significance">Significance</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#number-of-recommended-courses-r">Number of Recommended Courses #R</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Normality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Significance</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intersection">Intersection</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Normality</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Significance</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#combine-results">Combine Results</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Kerstin Wagner, Agathe Merceron, Petra Sauer, and Niels Pinkwart
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <p>
+This work is licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">CC BY-NC-ND 4.0</a>.
+</p>
+
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
