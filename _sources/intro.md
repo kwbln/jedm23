@@ -1,4 +1,4 @@
-# A Course Enrollment System Built on Success to Support Students At-Risk
+# Introduction
 
 This is the publication of aggregated results data and results explorations from the paper currently under review at [JEDM](https://jedm.educationaldatamining.org/).
 
